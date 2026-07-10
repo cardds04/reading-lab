@@ -139,14 +139,14 @@
       message: $("#homework-message"), reviewMessage: $("#review-message"), editors: $("#sentence-editor-list"), total: $("#sentence-total"),
       add: $("#add-sentence-button"), build: $("#build-homework-game"), reviewBack: $("#review-back-button"),
     };
-    try { ui.geminiKey.value = sessionStorage.getItem("lostSignalGeminiKey") || ""; } catch (_) { /* session storage may be unavailable */ }
+    try { ui.geminiKey.value = window.getGeminiKey(); } catch (_) { /* storage may be unavailable */ }
     checkTranslatorAvailability();
     ui.open.addEventListener("click", open);
     ui.back.addEventListener("click", close);
     ui.coverZone.addEventListener("click", () => selectPasteTarget("cover"));
     ui.bodyZone.addEventListener("click", () => selectPasteTarget("body"));
     ui.geminiKey.addEventListener("input", () => {
-      try { sessionStorage.setItem("lostSignalGeminiKey", ui.geminiKey.value.trim()); } catch (_) { /* keep the key in the input only */ }
+      window.saveGeminiKey(ui.geminiKey.value);
     });
     document.addEventListener("paste", handleClipboardPaste);
     ui.recognize.addEventListener("click", recognizePhotos);

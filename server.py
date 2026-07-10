@@ -236,6 +236,43 @@ class AppHandler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def handle_books_backup(self) -> None:
+        # 브라우저에 저장된 책 목록을 프로젝트 books.json으로 병합 저장한다 (제목 기준)
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+            if length <= 0 or length > MAX_REQUEST_BYTES:
+                raise ValueError("책 데이터 크기가 올바르지 않습니다.")
+            incoming = json.loads(self.rfile.read(length).decode("utf-8"))
+            if not isinstance(incoming, list):
+                raise ValueError("책 목록 형식이 아닙니다.")
+            target = ROOT / "books.json"
+            existing = []
+            if target.exists():
+                try:
+                    existing = json.loads(target.read_text(encoding="utf-8"))
+                except (ValueError, OSError):
+                    existing = []
+            if not isinstance(existing, list):
+                existing = []
+            books = {str(book.get("title") or "").strip().lower(): book
+                     for book in existing if isinstance(book, dict) and book.get("sentences")}
+            added = 0
+            for book in incoming:
+                if not isinstance(book, dict) or not isinstance(book.get("sentences"), list) or not book["sentences"]:
+                    continue
+                key = str(book.get("title") or "").strip().lower()
+                if not key:
+                    continue
+                if key not in books:
+                    added += 1
+                books[key] = book
+            target.write_text(json.dumps(list(books.values()), ensure_ascii=False, indent=2), encoding="utf-8")
+            self.send_json(200, {"saved": len(books), "added": added})
+        except (ValueError, json.JSONDecodeError) as error:
+            self.send_json(400, {"error": str(error)})
+        except Exception:
+            self.send_json(500, {"error": "책 백업 중 문제가 생겼습니다."})
+
     def do_GET(self) -> None:
         if self.path == "/api/gemini/status":
             configured = bool(os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY"))
@@ -244,6 +281,9 @@ class AppHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self) -> None:
+        if self.path == "/api/books/backup":
+            self.handle_books_backup()
+            return
         if self.path != "/api/gemini/analyze":
             self.send_json(404, {"error": "찾을 수 없는 요청입니다."})
             return

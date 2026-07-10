@@ -2,6 +2,31 @@
   "use strict";
 
   const MODEL = "gemini-3.5-flash";
+  const KEY_STORE = "lostSignalGeminiKey";
+
+  // #gkey=… 링크로 한 번 열면 키가 이 기기에 저장된다 (주소창에서는 즉시 제거)
+  try {
+    const fromHash = new URLSearchParams((location.hash || "").replace(/^#/, "")).get("gkey");
+    if (fromHash && fromHash.trim()) {
+      localStorage.setItem(KEY_STORE, fromHash.trim());
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  } catch (_) { /* storage may be unavailable */ }
+
+  window.getGeminiKey = function getGeminiKey() {
+    let key = "";
+    try { key = localStorage.getItem(KEY_STORE) || ""; } catch (_) { /* ignore */ }
+    if (!key) {
+      try { key = sessionStorage.getItem(KEY_STORE) || ""; } catch (_) { /* ignore */ }
+      if (key) window.saveGeminiKey(key);
+    }
+    if (!key && typeof window.LOCAL_GEMINI_KEY === "string") key = window.LOCAL_GEMINI_KEY.trim();
+    return key;
+  };
+
+  window.saveGeminiKey = function saveGeminiKey(value) {
+    try { localStorage.setItem(KEY_STORE, String(value || "").trim()); } catch (_) { /* ignore */ }
+  };
 
   const wordSchema = {
     type: "OBJECT",

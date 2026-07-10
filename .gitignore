@@ -2,3 +2,4 @@ dist/
 .openai/
 .wrangler/
 .DS_Store
+local-config.js

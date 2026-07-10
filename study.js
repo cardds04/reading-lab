@@ -106,7 +106,50 @@
     ui.pages.addEventListener("click", handleBoardClick);
     window.addEventListener("resize", () => requestAnimationFrame(alignQuizToActiveChunk));
     renderSavedBooks();
-    upgradeStoredBooksWithGemini();
+    syncBundledBooks().then(upgradeStoredBooksWithGemini);
+  }
+
+  async function syncBundledBooks() {
+    // 사이트에 내장된 책(books.json)을 이 기기의 저장 목록에 합친다
+    try {
+      const response = await fetch("books.json", { cache: "no-cache" });
+      if (response.ok) {
+        const bundled = await response.json();
+        if (Array.isArray(bundled)) {
+          const books = getStoredBooks();
+          const titles = new Set(books.map((book) => String(book.title || "").trim().toLowerCase()));
+          let added = 0;
+          bundled.forEach((book) => {
+            if (!book || !Array.isArray(book.sentences) || !book.sentences.length) return;
+            const key = String(book.title || "").trim().toLowerCase();
+            if (titles.has(key)) return;
+            books.push(book);
+            titles.add(key);
+            added += 1;
+          });
+          if (added) {
+            try {
+              localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books));
+              if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));
+            } catch (_) { /* local storage may be unavailable */ }
+            renderSavedBooks();
+          }
+        }
+      }
+    } catch (_) { /* offline or no bundled books */ }
+    // 로컬 개발 서버에서는 이 기기의 책을 프로젝트 books.json으로 백업한다
+    try {
+      if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) {
+        const books = getStoredBooks();
+        if (books.length) {
+          await fetch("/api/books/backup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(books)
+          });
+        }
+      }
+    } catch (_) { /* local server may not support backup */ }
   }
 
   function getStoredBooks() {
@@ -131,7 +174,7 @@
 
   async function upgradeStoredBooksWithGemini() {
     let apiKey = "";
-    try { apiKey = sessionStorage.getItem("lostSignalGeminiKey") || ""; } catch (_) { /* session storage may be unavailable */ }
+    try { apiKey = window.getGeminiKey(); } catch (_) { /* storage may be unavailable */ }
     if (!apiKey) return;
     const books = getStoredBooks();
     const pending = [];
@@ -650,7 +693,7 @@
     if ((idiom && idiom.meaning) || (glossary && glossary.meaning) || localMeaning) return;
     const sentenceIndex = state.currentIndex;
     try {
-      const apiKey = sessionStorage.getItem("lostSignalGeminiKey") || "";
+      const apiKey = window.getGeminiKey();
       const result = await window.geminiAnalyze({ mode: "word", apiKey, word: lookupTerm, sentence: stage.sentence });
       if (!result.meaning) throw new Error("단어 뜻을 찾지 못했습니다.");
       const meaning = String(result.meaning).trim();

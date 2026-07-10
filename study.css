@@ -307,7 +307,7 @@ button, input, select { font: inherit; }
 .sentence-summary-copy strong,
 .sentence-summary-copy small,
 .sentence-card.is-complete .sentence-summary-copy strong,
-.sentence-card.is-complete .sentence-summary-copy small { color: #111; }
+.sentence-card.is-complete .sentence-summary-copy small { color: #111; opacity: .32; }
 .word-token { border: 0 !important; color: #111 !important; background: transparent !important; box-shadow: none !important; }
 .word-token.is-chunk-muted { color: #111 !important; opacity: .32; }
 .word-token.is-chunk-active { color: #111 !important; opacity: 1; font-weight: 1000; }
@@ -473,3 +473,8 @@ button, input, select { font: inherit; }
   .study-rail { border-left: 0; border-top: 1px solid var(--study-line); }
   .big-next { position: sticky; bottom: 10px; min-height: 88px; }
 }
+
+/* 완료한 문장은 전부 비활성(회색) — 지금 읽는 덩어리만 진하게 보이도록 */
+.sentence-card.is-expanded-complete .word-token,
+.sentence-card.is-expanded-complete .word-token.is-verb,
+.sentence-card.is-expanded-complete .word-token.is-idiom { color: #111 !important; opacity: .32; font-weight: 900; }

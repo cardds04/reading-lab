@@ -85,7 +85,8 @@
   }
 
   function bindUI() {
-    $("#start-button").addEventListener("click", () => startStudy(window.LOST_SIGNAL_STORY || [], {
+    const startButton = $("#start-button");
+    if (startButton) startButton.addEventListener("click", () => startStudy(window.LOST_SIGNAL_STORY || [], {
       sourceTitle: "Lost Signal · Sample Text",
       srLevel: "2.5"
     }));
@@ -118,11 +119,20 @@
         if (Array.isArray(bundled)) {
           const books = getStoredBooks();
           const titles = new Set(books.map((book) => String(book.title || "").trim().toLowerCase()));
+          const glossCount = (book) => book.sentences.reduce((sum, item) => sum + (Array.isArray(item.wordGlosses) ? item.wordGlosses.length : 0), 0);
           let added = 0;
           bundled.forEach((book) => {
             if (!book || !Array.isArray(book.sentences) || !book.sentences.length) return;
             const key = String(book.title || "").trim().toLowerCase();
-            if (titles.has(key)) return;
+            if (titles.has(key)) {
+              // 같은 책이 이미 있어도 내장본이 단어 뜻을 더 갖추고 있으면 교체한다
+              const index = books.findIndex((item) => String(item.title || "").trim().toLowerCase() === key);
+              if (index >= 0 && glossCount(book) > glossCount(books[index])) {
+                books[index] = book;
+                added += 1;
+              }
+              return;
+            }
             books.push(book);
             titles.add(key);
             added += 1;
@@ -166,9 +176,13 @@
   function renderSavedBooks() {
     const books = getStoredBooks();
     ui.savedBooksPanel.hidden = books.length === 0;
-    ui.savedBookList.innerHTML = books.map((book, index) => `<div class="saved-book-card">
-      <button class="saved-book-card__start" type="button" data-saved-book-index="${index}"><span class="saved-book-card__copy"><strong>${escapeHtml(book.title || "이름 없는 책")}</strong><small>${book.sentences.length}문장 · 저장한 책</small></span><b class="saved-book-card__arrow">→</b></button>
-      <button class="saved-book-card__delete" type="button" data-delete-book-index="${index}" aria-label="${escapeHtml(book.title || "이름 없는 책")} 삭제">×</button>
+    ui.savedBookList.innerHTML = books.map((book, index) => `<div class="book-tile">
+      <button class="book-tile__start" type="button" data-saved-book-index="${index}">
+        <span class="book-tile__art" aria-hidden="true">📖</span>
+        <strong>${escapeHtml(book.title || "이름 없는 책")}</strong>
+        <small>${book.sentences.length}문장</small>
+      </button>
+      <button class="book-tile__delete" type="button" data-delete-book-index="${index}" aria-label="${escapeHtml(book.title || "이름 없는 책")} 삭제">×</button>
     </div>`).join("");
   }
 
@@ -253,6 +267,50 @@
     updateStats();
     activateSentence(0);
     state.timer = setInterval(updateTimer, 1000);
+    prefetchWordGlosses();
+  }
+
+  async function prefetchWordGlosses() {
+    // 세션 시작과 동시에 모든 단어 뜻을 미리 받아둬서 클릭 즉시 보이게 한다
+    try {
+      const apiKey = window.getGeminiKey();
+      if (!apiKey || !Array.isArray(state.stages) || !state.stages.length) return;
+      const stages = state.stages;
+      const known = new Set();
+      stages.forEach((stage) => (Array.isArray(stage.wordGlosses) ? stage.wordGlosses : [])
+        .forEach((item) => known.add(String(item.word || "").toLowerCase())));
+      const wanted = [];
+      stages.forEach((stage) => tokenize(stage.sentence).forEach((token) => {
+        if (!/[A-Za-z]/.test(token)) return;
+        const lower = token.toLowerCase();
+        if (known.has(lower)) return;
+        if (window.HomeworkBuilder && typeof window.HomeworkBuilder.vocabularyMeaning === "function"
+          && window.HomeworkBuilder.vocabularyMeaning(lower)) return;
+        known.add(lower);
+        wanted.push(token);
+      }));
+      if (!wanted.length) return;
+      const passage = stages.map((stage) => stage.sentence).join(" ");
+      for (let start = 0; start < wanted.length; start += 80) {
+        const batch = wanted.slice(start, start + 80);
+        const result = await window.geminiAnalyze({ mode: "words", apiKey, words: batch, passage });
+        const glosses = Array.isArray(result && result.glosses) ? result.glosses : [];
+        if (state.stages !== stages) return; // 다른 세션으로 넘어갔으면 중단
+        glosses.forEach((item) => {
+          const word = String(item && item.word || "").trim();
+          const meaning = String(item && item.meaning || "").trim();
+          if (!word || !meaning) return;
+          const lower = word.toLowerCase();
+          stages.forEach((stage) => {
+            if (!tokenize(stage.sentence).some((token) => token.toLowerCase() === lower)) return;
+            if (!Array.isArray(stage.wordGlosses)) stage.wordGlosses = [];
+            if (stage.wordGlosses.some((entry) => String(entry.word || "").toLowerCase() === lower)) return;
+            stage.wordGlosses.push({ word, meaning });
+            saveWordGlossToBook(stage.sentence, word, meaning);
+          });
+        });
+      }
+    } catch (_) { /* 미리 받아두기는 실패해도 클릭 시 개별 조회로 동작한다 */ }
   }
 
   function normalizeStage(stage, index) {

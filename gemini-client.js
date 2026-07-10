@@ -68,6 +68,9 @@
       schema = wordSchema;
     } else if (mode === "sentence") {
       prompt += ` Analyze exactly this supplied sentence and return exactly one item: ${payload.sentence}`;
+    } else if (mode === "words") {
+      prompt = `Passage: ${payload.passage}\nTarget words: ${(payload.words || []).join(", ")}\nFor each target word, return one short natural Korean meaning fitting its context in the passage. Return every target word exactly as given.`;
+      schema = { type: "OBJECT", properties: { glosses: { type: "ARRAY", items: wordSchema } }, required: ["glosses"] };
     }
     parts.push({ text: prompt });
     for (const image of (payload.images || []).slice(0, 1)) parts.push({ inlineData: { mimeType: image.mimeType, data: image.data } });

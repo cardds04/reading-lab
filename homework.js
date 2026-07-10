@@ -708,6 +708,7 @@
       localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books.slice(0, 20)));
       localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(book));
     } catch (_) { /* local storage may be unavailable */ }
+    try { window.dispatchEvent(new Event("readinglab:books-changed")); } catch (_) { /* older browsers */ }
   }
 
   function readStoredBooks() {

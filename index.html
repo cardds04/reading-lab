@@ -28,16 +28,21 @@
           <div class="landing-header__meta"><span>문장 구조 훈련</span><b>5 SENTENCES / PAGE</b></div>
         </header>
 
-        <div class="landing-main landing-main--icons">
-          <div class="icon-grid">
-            <button id="homework-button" class="icon-tile icon-tile--paste" type="button">
-              <span class="icon-tile__art" aria-hidden="true">📷</span>
-              <b>책 사진 붙여넣기</b>
-            </button>
-            <section id="saved-books-panel" class="icon-grid__books" hidden aria-label="저장한 책">
-              <div id="saved-book-list" class="icon-grid__books-list"></div>
-            </section>
+        <div class="landing-main landing-main--library">
+          <div class="landing-copy">
+            <div class="level-pill"><span>연습 레벨</span><b>SR 2.5</b></div>
+            <p class="landing-eyebrow">SPEED READING · SENTENCE STRUCTURE</p>
+            <h1>문장을 끊어 읽고,<br /><em>빠르게 해석하세요.</em></h1>
+            <p class="landing-description">영어 문장을 의미 덩어리로 끊어 읽고 알맞은 한국어 뜻을 고르세요. 모든 덩어리를 맞히면 바로 다음 문장으로 넘어갑니다.</p>
+            <div class="landing-actions">
+              <button id="homework-button" class="study-primary" type="button"><span>책 사진 붙여넣기</span><b>▣</b></button>
+            </div>
           </div>
+
+          <section id="saved-books-panel" class="saved-books-panel saved-books-panel--library" hidden aria-label="저장한 책">
+            <div class="saved-books-heading"><div><span>MY BOOKS</span><strong>저장한 책을 골라 시작하세요</strong></div><small>사진으로 만든 책</small></div>
+            <div id="saved-book-list" class="saved-book-list saved-book-list--library"></div>
+          </section>
         </div>
       </section>
 

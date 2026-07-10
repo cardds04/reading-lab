@@ -101,63 +101,138 @@
       ui.sound.textContent = state.sound ? "♫" : "×";
       ui.sound.setAttribute("aria-pressed", String(state.sound));
       if (!state.sound) stopSpeech();
-      else if (state.session) speakSentence(state.stages[state.currentIndex].sentence);
+      else if (state.session) speakActiveChunk();
       showToast(state.sound ? "문장 읽기 소리를 켰어요." : "문장 읽기 소리를 껐어요.");
     });
     ui.pages.addEventListener("click", handleBoardClick);
     window.addEventListener("resize", () => requestAnimationFrame(alignQuizToActiveChunk));
     renderSavedBooks();
     syncBundledBooks().then(upgradeStoredBooksWithGemini);
+    window.addEventListener("readinglab:books-changed", () => {
+      renderSavedBooks();
+      scheduleCloudPush();
+    });
+  }
+
+  // 기기 간 책 동기화용 클라우드 저장소 (schedule-site와 같은 Supabase, 전용 행 사용)
+  const CLOUD_KV = {
+    url: "https://pidfkrxsgffoqstogmli.supabase.co/rest/v1/schedule_site_client_kv",
+    key: "sb_publishable_0JHUt_yXZx78FwoqO8XCDg_s319cLiW",
+    row: "reading_lab_books_v1"
+  };
+  let cloudDeleted = {};
+  let cloudAvailable = false;
+  let cloudPushTimer = 0;
+
+  function bookKey(book) { return String((book && book.title) || "").trim().toLowerCase(); }
+  function bookGlossCount(book) {
+    return (Array.isArray(book && book.sentences) ? book.sentences : [])
+      .reduce((sum, item) => sum + (Array.isArray(item.wordGlosses) ? item.wordGlosses.length : 0), 0);
+  }
+  function bookTime(book) {
+    const time = Date.parse(String((book && book.savedAt) || ""));
+    return Number.isFinite(time) ? time : 0;
+  }
+  function pickBetterBook(a, b) {
+    if (!a) return b;
+    if (!b) return a;
+    const timeA = bookTime(a);
+    const timeB = bookTime(b);
+    if (timeA !== timeB) return timeA > timeB ? a : b; // 다시 만든 책이면 최신본 우선
+    return bookGlossCount(b) > bookGlossCount(a) ? b : a; // 같은 판이면 단어 뜻 많은 쪽
+  }
+
+  async function fetchCloudBooks() {
+    try {
+      const response = await fetch(`${CLOUD_KV.url}?id=eq.${CLOUD_KV.row}&select=kv&limit=1`, {
+        headers: { apikey: CLOUD_KV.key, Authorization: `Bearer ${CLOUD_KV.key}` },
+        cache: "no-store"
+      });
+      if (!response.ok) return null;
+      const rows = await response.json();
+      const kv = rows && rows[0] && rows[0].kv;
+      return {
+        books: Array.isArray(kv && kv.books) ? kv.books : [],
+        deleted: (kv && typeof kv.deleted === "object" && kv.deleted) || {}
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
+  async function pushBooksToCloud() {
+    if (!cloudAvailable) return;
+    const books = getStoredBooks();
+    if (!books.length && !Object.keys(cloudDeleted).length) return; // 빈값 덮어쓰기 가드
+    try {
+      await fetch(`${CLOUD_KV.url}?on_conflict=id`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Prefer: "resolution=merge-duplicates",
+          apikey: CLOUD_KV.key,
+          Authorization: `Bearer ${CLOUD_KV.key}`
+        },
+        body: JSON.stringify([{ id: CLOUD_KV.row, kv: { books, deleted: cloudDeleted } }])
+      });
+    } catch (_) { /* 오프라인이면 다음 열 때 다시 올린다 */ }
+  }
+
+  function scheduleCloudPush() {
+    clearTimeout(cloudPushTimer);
+    cloudPushTimer = setTimeout(pushBooksToCloud, 2500);
   }
 
   async function syncBundledBooks() {
-    // 사이트에 내장된 책(books.json)을 이 기기의 저장 목록에 합친다
+    // 내장 책(books.json) + 클라우드 책 + 이 기기 책을 제목 기준으로 병합한다
+    let bundled = [];
     try {
       const response = await fetch("books.json", { cache: "no-cache" });
       if (response.ok) {
-        const bundled = await response.json();
-        if (Array.isArray(bundled)) {
-          const books = getStoredBooks();
-          const titles = new Set(books.map((book) => String(book.title || "").trim().toLowerCase()));
-          const glossCount = (book) => book.sentences.reduce((sum, item) => sum + (Array.isArray(item.wordGlosses) ? item.wordGlosses.length : 0), 0);
-          let added = 0;
-          bundled.forEach((book) => {
-            if (!book || !Array.isArray(book.sentences) || !book.sentences.length) return;
-            const key = String(book.title || "").trim().toLowerCase();
-            if (titles.has(key)) {
-              // 같은 책이 이미 있어도 내장본이 단어 뜻을 더 갖추고 있으면 교체한다
-              const index = books.findIndex((item) => String(item.title || "").trim().toLowerCase() === key);
-              if (index >= 0 && glossCount(book) > glossCount(books[index])) {
-                books[index] = book;
-                added += 1;
-              }
-              return;
-            }
-            books.push(book);
-            titles.add(key);
-            added += 1;
-          });
-          if (added) {
-            try {
-              localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books));
-              if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));
-            } catch (_) { /* local storage may be unavailable */ }
-            renderSavedBooks();
-          }
-        }
+        const parsed = await response.json();
+        if (Array.isArray(parsed)) bundled = parsed;
       }
     } catch (_) { /* offline or no bundled books */ }
+    const cloud = await fetchCloudBooks();
+    if (cloud) {
+      cloudAvailable = true;
+      cloudDeleted = cloud.deleted;
+    }
+    const merged = new Map();
+    const consider = (book) => {
+      if (!book || !Array.isArray(book.sentences) || !book.sentences.length) return;
+      const key = bookKey(book);
+      if (!key) return;
+      merged.set(key, pickBetterBook(merged.get(key), book));
+    };
+    getStoredBooks().forEach(consider);
+    bundled.forEach(consider);
+    (cloud ? cloud.books : []).forEach(consider);
+    // 다른 기기에서 지운 책은 빼되, 삭제 후 다시 만든 책은 살린다
+    Object.entries(cloudDeleted).forEach(([key, deletedAt]) => {
+      const book = merged.get(key);
+      if (!book) return;
+      if (bookTime(book) > (Date.parse(String(deletedAt)) || 0)) {
+        delete cloudDeleted[key];
+        return;
+      }
+      merged.delete(key);
+    });
+    const books = [...merged.values()].sort((a, b) => bookTime(b) - bookTime(a)).slice(0, 20);
+    try {
+      localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books));
+      if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));
+    } catch (_) { /* local storage may be unavailable */ }
+    renderSavedBooks();
+    scheduleCloudPush();
     // 로컬 개발 서버에서는 이 기기의 책을 프로젝트 books.json으로 백업한다
     try {
-      if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) {
-        const books = getStoredBooks();
-        if (books.length) {
-          await fetch("/api/books/backup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(books)
-          });
-        }
+      if (/^(127\.0\.0\.1|localhost)$/.test(location.hostname) && books.length) {
+        await fetch("/api/books/backup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(books)
+        });
       }
     } catch (_) { /* local server may not support backup */ }
   }
@@ -176,13 +251,9 @@
   function renderSavedBooks() {
     const books = getStoredBooks();
     ui.savedBooksPanel.hidden = books.length === 0;
-    ui.savedBookList.innerHTML = books.map((book, index) => `<div class="book-tile">
-      <button class="book-tile__start" type="button" data-saved-book-index="${index}">
-        <span class="book-tile__art" aria-hidden="true">📖</span>
-        <strong>${escapeHtml(book.title || "이름 없는 책")}</strong>
-        <small>${book.sentences.length}문장</small>
-      </button>
-      <button class="book-tile__delete" type="button" data-delete-book-index="${index}" aria-label="${escapeHtml(book.title || "이름 없는 책")} 삭제">×</button>
+    ui.savedBookList.innerHTML = books.map((book, index) => `<div class="saved-book-card">
+      <button class="saved-book-card__start" type="button" data-saved-book-index="${index}"><span class="saved-book-card__art" aria-hidden="true">📖</span><span class="saved-book-card__copy"><strong>${escapeHtml(book.title || "이름 없는 책")}</strong><small>${book.sentences.length}문장 · 저장한 책</small></span><b class="saved-book-card__arrow">→</b></button>
+      <button class="saved-book-card__delete" type="button" data-delete-book-index="${index}" aria-label="${escapeHtml(book.title || "이름 없는 책")} 삭제">×</button>
     </div>`).join("");
   }
 
@@ -212,6 +283,7 @@
       if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));
     } catch (_) { /* local storage may be unavailable */ }
     renderSavedBooks();
+    if (updated) scheduleCloudPush();
     showToast(updated ? `기존 책의 ${updated}개 문장을 Gemini로 업데이트했습니다.` : "기존 책 업데이트를 완료하지 못했어요. Gemini 키를 확인해주세요.");
   }
 
@@ -228,6 +300,8 @@
         if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));
         else localStorage.removeItem("lostSignalHomeworkBook");
       } catch (_) { /* local storage may be unavailable */ }
+      cloudDeleted[bookKey(book)] = new Date().toISOString();
+      scheduleCloudPush();
       renderSavedBooks();
       return;
     }
@@ -413,7 +487,15 @@
     renderPages();
     updateStats();
     updateLegend();
-    speakSentence(stage.sentence);
+    speakActiveChunk();
+  }
+
+  function speakActiveChunk() {
+    if (!state.session) return;
+    const stage = state.stages[state.currentIndex];
+    if (!stage) return;
+    const part = state.session.phase === "halves" ? state.session.meaningHalves[state.session.halfIndex] : null;
+    speakSentence(part && part.text ? part.text : stage.sentence);
   }
 
   function renderPages() {
@@ -794,6 +876,7 @@
     if (index < state.session.meaningHalves.length - 1) {
       state.session.halfIndex += 1;
       renderPages();
+      speakActiveChunk();
       return;
     }
     state.session.completed = true;

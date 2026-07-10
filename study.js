@@ -143,14 +143,9 @@
     let updated = 0;
     for (const sentence of pending) {
       try {
-        const response = await fetch("/api/gemini/analyze", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ mode: "sentence", apiKey, sentence: sentence.sentence })
-        });
-        const result = await response.json();
+        const result = await window.geminiAnalyze({ mode: "sentence", apiKey, sentence: sentence.sentence });
         const analyzed = Array.isArray(result.sentences) ? result.sentences[0] : null;
-        if (!response.ok || !analyzed) throw new Error(result.error || "문장을 업데이트하지 못했습니다.");
+        if (!analyzed) throw new Error("문장을 업데이트하지 못했습니다.");
         Object.assign(sentence, analyzed, { geminiStudyVersion: 2 });
         updated += 1;
       } catch (_) { /* leave this sentence for the next retry */ }
@@ -656,13 +651,8 @@
     const sentenceIndex = state.currentIndex;
     try {
       const apiKey = sessionStorage.getItem("lostSignalGeminiKey") || "";
-      const response = await fetch("/api/gemini/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode: "word", apiKey, word: lookupTerm, sentence: stage.sentence })
-      });
-      const result = await response.json();
-      if (!response.ok || !result.meaning) throw new Error(result.error || "단어 뜻을 찾지 못했습니다.");
+      const result = await window.geminiAnalyze({ mode: "word", apiKey, word: lookupTerm, sentence: stage.sentence });
+      if (!result.meaning) throw new Error("단어 뜻을 찾지 못했습니다.");
       const meaning = String(result.meaning).trim();
       if (!Array.isArray(stage.wordGlosses)) stage.wordGlosses = [];
       stage.wordGlosses.push({ word: token, meaning });

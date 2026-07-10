@@ -1,0 +1,4 @@
+dist/
+.openai/
+.wrangler/
+.DS_Store

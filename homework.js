@@ -296,34 +296,17 @@
       ui.geminiKey.focus({ preventScroll: true });
       throw new Error("화면 위쪽에 Gemini API 키를 먼저 입력해주세요.");
     }
-    if (window.location.protocol === "file:") {
-      throw new Error("index.html을 파일로 열면 Gemini 연결이 되지 않아요. 터미널에서 python3 server.py를 실행한 뒤 http://127.0.0.1:4173으로 접속해주세요.");
-    }
     const dataUrl = await fileToDataUrl(file);
     const commaIndex = dataUrl.indexOf(",");
-    let response;
     try {
-      response = await fetch("/api/gemini/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          mode,
-          apiKey,
-          images: [{ mimeType: file.type || "image/jpeg", data: dataUrl.slice(commaIndex + 1) }]
-        })
+      return await window.geminiAnalyze({
+        mode,
+        apiKey,
+        images: [{ mimeType: file.type || "image/jpeg", data: dataUrl.slice(commaIndex + 1) }]
       });
-    } catch (_) {
-      throw new Error("Gemini 연결 서버를 찾지 못했어요. python3 server.py를 실행한 뒤 이 페이지를 새로고침해주세요.");
+    } catch (error) {
+      throw new Error(error.message || "Gemini가 사진을 분석하지 못했습니다.");
     }
-    let result = {};
-    try { result = await response.json(); } catch (_) { /* handled below */ }
-    if (!response.ok) {
-      const message = result.error || (response.status === 404
-        ? "Gemini 연결 서버로 실행되지 않았어요. server.py로 다시 시작해주세요."
-        : "Gemini가 사진을 분석하지 못했습니다.");
-      throw new Error(message);
-    }
-    return result;
   }
 
   function fileToDataUrl(file) {

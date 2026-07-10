@@ -1,0 +1,903 @@
+[
+  {
+    "title": "More About Eggs",
+    "srLevel": "직접 입력",
+    "savedAt": "2026-07-10T08:44:12.128Z",
+    "sentences": [
+      {
+        "sentence": "When a baby chicken starts to grow inside an egg, it is nothing more than a tiny spot.",
+        "translation": "아기 병아리가 알 안에서 자라기 시작할 때, 그것은 아주 작은 점에 불과합니다.",
+        "verb": "starts",
+        "verbMeaning": "시작하다",
+        "preposition": "inside",
+        "prepositionMeaning": "~ 안에서",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "When a baby chicken starts to grow inside an egg,",
+            "meaning": "아기 병아리가 알 안에서 자라기 시작할 때,",
+            "role": "시간의 부사절",
+            "options": [
+              "아기 병아리가 알 안에서 자라기 시작할 때,",
+              "아기 병아리가 알을 깨고 나올 때,",
+              "아기 병아리가 알을 낳기 시작할 때,",
+              "아기 병아리가 알 속에서 잠을 잘 때,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "it is nothing more than",
+            "meaning": "그것은 단지 ~에 불과합니다",
+            "role": "주어와 동사구",
+            "options": [
+              "그것은 결코 ~이 아닙니다",
+              "그것은 단지 ~에 불과합니다",
+              "그것은 ~보다 훨씬 더 큽니다",
+              "그것은 ~을 필요로 합니다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "a tiny spot.",
+            "meaning": "아주 작은 점",
+            "role": "보어",
+            "options": [
+              "커다란 알",
+              "단단한 껍질",
+              "아주 작은 점",
+              "노란색 깃털"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "grammarPattern": "nothing more than",
+        "grammarExplanation": "'nothing more than'은 '단지 ~에 불과한(only)'이라는 뜻의 비교 표현으로, 아주 사소하거나 작은 것을 강조할 때 사용됩니다."
+      },
+      {
+        "sentence": "Three weeks later, just before it breaks out of its shell, the chick fills the whole egg.",
+        "translation": "3주 후, 알껍데기를 깨고 나오기 직전에, 병아리는 알 전체를 가득 채웁니다.",
+        "verb": "fills",
+        "verbMeaning": "채우다",
+        "preposition": "of",
+        "prepositionMeaning": "~의",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "Three weeks later,",
+            "meaning": "3주 후에,",
+            "role": "시간 부사구",
+            "options": [
+              "3일 후에,",
+              "3주 후에,",
+              "3달 후에,",
+              "3년 후에,"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "just before it breaks out of its shell,",
+            "meaning": "그것이 껍데기를 깨고 나오기 직전에,",
+            "role": "시간의 부사절",
+            "options": [
+              "그것이 껍데기를 깨고 나오기 직전에,",
+              "그것이 알 속으로 들어간 직후에,",
+              "그것이 껍데기를 단단하게 만들 때,",
+              "그것이 알을 품기 시작하기 전에,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "the chick fills",
+            "meaning": "병아리는 채웁니다",
+            "role": "주어와 동사",
+            "options": [
+              "병아리는 먹습니다",
+              "병아리는 채웁니다",
+              "병아리는 자랍니다",
+              "병아리는 깨어납니다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "the whole egg.",
+            "meaning": "알 전체를",
+            "role": "목적어",
+            "options": [
+              "둥지 전체를",
+              "껍데기 일부분을",
+              "알 전체를",
+              "노른자 부위를"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "grammarPattern": "just before",
+        "grammarExplanation": "'just before'는 '직전에'라는 뜻으로, 어떤 사건이 일어나기 바로 직전의 시점을 강조할 때 쓰이는 접속사구입니다."
+      },
+      {
+        "sentence": "You can see that it has done a lot of growing!",
+        "translation": "여러분은 그것이 아주 많이 자랐다는 것을 알 수 있습니다!",
+        "verb": "see",
+        "verbMeaning": "알다",
+        "preposition": "of",
+        "prepositionMeaning": "~의",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "You can see",
+            "meaning": "여러분은 알 수 있습니다",
+            "role": "주어와 동사",
+            "options": [
+              "여러분은 알 수 있습니다",
+              "여러분은 볼 수 없습니다",
+              "여러분은 들을 수 있습니다",
+              "여러분은 말할 수 있습니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "that it has done",
+            "meaning": "그것이 해냈다는 것을",
+            "role": "접속사와 주어, 동사",
+            "options": [
+              "그것이 멈췄다는 것을",
+              "그것이 시작했다는 것을",
+              "그것이 해냈다는 것을",
+              "그것이 사라졌다는 것을"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "a lot of growing!",
+            "meaning": "많은 성장을!",
+            "role": "목적어",
+            "options": [
+              "많은 성장을!",
+              "조금의 움직임을!",
+              "단단한 껍질을!",
+              "깊은 잠을!"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "that 명사절 접속사",
+        "grammarExplanation": "동사 'see'의 목적어로 쓰인 'that'은 뒤에 완전한 문장을 이끌어 '~라는 것'이라는 명사절을 만듭니다."
+      },
+      {
+        "sentence": "The chick floats in a bag of watery stuff, or liquid.",
+        "translation": "병아리는 물 같은 물질, 즉 액체 주머니 속에 떠 있습니다.",
+        "verb": "floats",
+        "verbMeaning": "떠 있다",
+        "preposition": "in",
+        "prepositionMeaning": "~ 안에",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "The chick floats",
+            "meaning": "병아리는 떠 있습니다",
+            "role": "주어와 동사",
+            "options": [
+              "병아리는 떠 있습니다",
+              "병아리가 자라납니다",
+              "병아리가 먹습니다",
+              "병아리가 잠을 잡니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "in a bag of watery stuff,",
+            "meaning": "물 같은 물질의 주머니 속에",
+            "role": "장소의 전치사구",
+            "options": [
+              "단단한 껍질 안에서",
+              "따뜻한 둥지 위에서",
+              "물 같은 물질의 주머니 속에",
+              "엄마 품 속에서"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "or liquid.",
+            "meaning": "즉 액체인",
+            "role": "동격의 부연 설명",
+            "options": [
+              "즉 공기인",
+              "즉 액체인",
+              "즉 모래인",
+              "즉 흙인"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "grammarPattern": "Subject + Verb + Prepositional Phrase",
+        "grammarExplanation": "주어(The chick) 뒤에 자동사(floats)가 오고, 장소를 나타내는 전치사구(in a bag of watery stuff)가 이어지는 구조입니다. 'or liquid'는 앞의 'watery stuff'를 부연 설명하는 동격의 표현입니다."
+      },
+      {
+        "sentence": "The liquid keeps the chick from drying out and makes it easier for it to exercise its tiny muscles.",
+        "translation": "그 액체는 병아리가 마르는 것을 막아주고 병아리가 미세한 근육을 운동시키는 것을 더 쉽게 만듭니다.",
+        "verb": "keeps",
+        "verbMeaning": "막아주다 (유지하다)",
+        "preposition": "from",
+        "prepositionMeaning": "~로부터",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "The liquid keeps the chick",
+            "meaning": "그 액체는 병아리를 지켜 줍니다",
+            "role": "주어와 동사 및 목적어",
+            "options": [
+              "그 액체는 병아리를 지켜 줍니다",
+              "그 액체는 병아리를 자라게 합니다",
+              "그 액체는 병아리를 따뜻하게 합니다",
+              "그 액체는 병아리를 씻겨 줍니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "from drying out",
+            "meaning": "마르는 것으로부터",
+            "role": "금지/예방의 전치사구",
+            "options": [
+              "추워지는 것으로부터",
+              "배고파지는 것으로부터",
+              "마르는 것으로부터",
+              "다치는 것으로부터"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "and makes it easier",
+            "meaning": "그리고 그것을 더 쉽게 만듭니다",
+            "role": "병렬 동사와 가목적어 및 목적보어",
+            "options": [
+              "그리고 그것을 더 어렵게 만듭니다",
+              "그리고 그것을 더 쉽게 만듭니다",
+              "그리고 그것을 더 빠르게 만듭니다",
+              "그리고 그것을 더 안전하게 만듭니다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "for it to exercise its tiny muscles.",
+            "meaning": "그것이 미세한 근육을 운동시키는 것을",
+            "role": "의미상 주어와 진목적어",
+            "options": [
+              "그것이 껍질을 깨고 나오는 것을",
+              "그것이 미세한 근육을 운동시키는 것을",
+              "그것이 숨을 쉬는 것을",
+              "그것이 날개를 퍼덕이는 것을"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "grammarPattern": "keep A from -ing / make + it(가목적어) + 형용사 + for 의미상주어 + to-v(진목적어)",
+        "grammarExplanation": "첫 번째 절은 'keep A from -ing'(A가 ~하는 것을 막다) 패턴을 사용하고, 두 번째 절은 가목적어 'it'과 진목적어 'to exercise ~', 그리고 to부정사의 의미상 주어 'for it'을 포함하는 5형식 구조입니다."
+      },
+      {
+        "sentence": "You might say that the chick has its lunch with it in a bag called the yolk sac.",
+        "translation": "여러분은 병아리가 난황낭이라고 불리는 주머니에 점심을 가지고 다닌다고 말할지도 모릅니다.",
+        "verb": "say",
+        "verbMeaning": "말하다",
+        "preposition": "with",
+        "prepositionMeaning": "~와 함께",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "You might say",
+            "meaning": "여러분은 말할지도 모릅니다",
+            "role": "주어 + 동사",
+            "options": [
+              "여러분은 말할지도 모릅니다",
+              "여러분은 생각해야 합니다",
+              "여러분은 들었을 것입니다",
+              "여러분은 볼 수 있습니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "that the chick has its lunch with it",
+            "meaning": "병아리가 그것과 함께 점심을 가지고 있다고",
+            "role": "목적어절",
+            "options": [
+              "병아리가 그것과 함께 점심을 가지고 있다고",
+              "병아리가 아침을 먹고 나서",
+              "병아리가 둥지를 떠날 때",
+              "병아리가 알을 깨고 나올 때"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "in a bag called the yolk sac",
+            "meaning": "난황낭이라고 불리는 주머니 안에",
+            "role": "부사구",
+            "options": [
+              "난황낭이라고 불리는 주머니 안에",
+              "둥지라고 불리는 따뜻한 곳에",
+              "달걀껍데기라고 불리는 단단한 벽에",
+              "날개라고 불리는 깃털 아래에"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "might + 동사원형 / 명사절 접속사 that",
+        "grammarExplanation": "might는 약한 추측을 나타내는 조동사로 '말할지도 모른다'라는 뜻이며, 접속사 that은 say의 목적어 역할을 하는 명사절을 이끕니다."
+      },
+      {
+        "sentence": "The yolk sac holds the yolk of the egg.",
+        "translation": "난황낭은 달걀의 노른자를 담고 있습니다.",
+        "verb": "holds",
+        "verbMeaning": "담고 있다",
+        "preposition": "of",
+        "prepositionMeaning": "~의",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "The yolk sac holds",
+            "meaning": "난황낭은 담고 있습니다",
+            "role": "주어 + 동사",
+            "options": [
+              "난황낭은 담고 있습니다",
+              "달걀껍데기는 보호합니다",
+              "병아리는 먹습니다",
+              "어미 닭은 품고 있습니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "the yolk of the egg",
+            "meaning": "달걀의 노른자를",
+            "role": "목적어",
+            "options": [
+              "달걀의 노른자를",
+              "달걀의 흰자를",
+              "달걀의 껍데기를",
+              "둥지 안의 알을"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "주어 + 타동사 + 목적어",
+        "grammarExplanation": "holds는 '담다, 보유하다'라는 뜻의 타동사로, 뒤에 목적어인 'the yolk of the egg'를 취하여 완전한 3형식 문장을 이룹니다."
+      },
+      {
+        "sentence": "The yolk is food that the chick uses while it is growing inside the eggshell.",
+        "translation": "노른자는 병아리가 달걀껍데기 안에서 자라는 동안 사용하는 먹이입니다.",
+        "verb": "is",
+        "verbMeaning": "~이다",
+        "preposition": "inside",
+        "prepositionMeaning": "~ 안에서",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "The yolk is food",
+            "meaning": "노른자는 먹이입니다",
+            "role": "주어 + 동사 + 보어",
+            "options": [
+              "노른자는 먹이입니다",
+              "노른자는 노란색입니다",
+              "노른자는 영양분입니다",
+              "노른자는 껍질입니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "that the chick uses",
+            "meaning": "병아리가 사용하는",
+            "role": "관계대명사절",
+            "options": [
+              "병아리가 사용하는",
+              "병아리가 싫어하는",
+              "병아리가 남겨두는",
+              "병아리가 만드는"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "while it is growing inside the eggshell",
+            "meaning": "그것이 달걀껍데기 안에서 자라는 동안",
+            "role": "부사절",
+            "options": [
+              "그것이 달걀껍데기 안에서 자라는 동안",
+              "그것이 알에서 깨어난 후에",
+              "그것이 둥지 밖으로 나올 때",
+              "그것이 어미를 찾아갈 때"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "목적격 관계대명사 that / 접속사 while",
+        "grammarExplanation": "that은 선행사 food를 수식하는 목적격 관계대명사이며, while은 '~하는 동안'이라는 뜻으로 진행형 시제(is growing)와 함께 쓰여 기간을 나타냅니다."
+      },
+      {
+        "sentence": "Another bag is like a small bathroom and catches the wastes from the growing chick.",
+        "translation": "또 다른 주머니는 작은 화장실 같아서 자라나는 병아리로부터 나오는 배설물을 받아냅니다.",
+        "verb": "catches",
+        "verbMeaning": "받아내다",
+        "preposition": "from",
+        "prepositionMeaning": "~로부터",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "Another bag is like a small bathroom",
+            "meaning": "또 다른 주머니는 작은 화장실과 같습니다",
+            "role": "주어 + 동사 + 보어",
+            "options": [
+              "또 다른 주머니는 작은 화장실과 같습니다",
+              "첫 번째 주머니는 침대와 같습니다",
+              "그 주머니는 부엌과 같습니다",
+              "다른 주머니는 놀이터와 같습니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "and catches the wastes",
+            "meaning": "그리고 배설물을 받아냅니다",
+            "role": "동사 + 목적어 (병렬)",
+            "options": [
+              "그리고 배설물을 받아냅니다",
+              "그리고 영양분을 공급합니다",
+              "그리고 산소를 흡수합니다",
+              "그리고 온도를 유지합니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "from the growing chick",
+            "meaning": "자라나는 병아리로부터",
+            "role": "부사구",
+            "options": [
+              "자라나는 병아리로부터",
+              "알을 품는 어미로부터",
+              "외부의 차가운 공기로부터",
+              "달걀껍데기의 틈으로부터"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "be like + 명사 / 동사의 병렬 구조",
+        "grammarExplanation": "전치사 like는 '~와 같은'이라는 뜻으로 쓰였으며, 주어 Another bag에 단수 동사 is와 catches가 and로 연결되어 병렬 구조를 이룹니다."
+      },
+      {
+        "sentence": "There is a small air pocket at one end of the eggshell.",
+        "translation": "달걀껍데기의 한쪽 끝에는 작은 공기 주머니가 있습니다.",
+        "verb": "is",
+        "verbMeaning": "있다",
+        "preposition": "at",
+        "prepositionMeaning": "~에",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "There is a small air pocket",
+            "meaning": "작은 공기 주머니가 있습니다",
+            "role": "주어 및 동사",
+            "options": [
+              "작은 공기 주머니가 있습니다",
+              "큰 공기 주머니가 있습니다",
+              "달걀껍데기가 있습니다",
+              "공기 주머니가 없습니다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "at one end of the eggshell",
+            "meaning": "달걀껍데기의 한쪽 끝에",
+            "role": "장소 부사구",
+            "options": [
+              "달걀껍데기의 한쪽 끝에",
+              "달걀껍데기의 중앙에",
+              "달걀껍데기의 바깥쪽에",
+              "달걀껍데기의 안쪽에"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "There is + 단수 명사",
+        "grammarExplanation": "'There is'는 '~이 있다'라는 뜻으로, 뒤에 단수 명사(a small air pocket)가 옵니다."
+      },
+      {
+        "sentence": "A week before the chick is ready to crack its way out of the shell, it sticks its head under its wing and points its beak at the air pocket.",
+        "translation": "병아리가 껍질을 깨고 나올 준비가 되기 일주일 전에, 병아리는 날개 아래로 머리를 집어넣고 공기 주머니를 향해 부리를 겨눕니다.",
+        "verb": "sticks",
+        "verbMeaning": "집어넣다",
+        "preposition": "under",
+        "prepositionMeaning": "~ 아래에",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "A week before the chick is ready",
+            "meaning": "병아리가 준비되기 일주일 전에",
+            "role": "시간 부사절",
+            "options": [
+              "병아리가 준비되기 일주일 전에",
+              "병아리가 태어난 지 일주일 후에",
+              "병아리가 준비되기 이틀 전에",
+              "병아리가 자라기 일주일 전에"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "to crack its way out of the shell,",
+            "meaning": "껍질을 깨고 나올",
+            "role": "형용사적 수식어구",
+            "options": [
+              "껍질을 깨고 나올",
+              "껍질을 만들",
+              "껍질을 따뜻하게 할",
+              "껍질을 먹을"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "it sticks its head under its wing",
+            "meaning": "그것은 날개 아래로 머리를 집어넣고",
+            "role": "주절의 첫 번째 동사구",
+            "options": [
+              "그것은 날개 아래로 머리를 집어넣고",
+              "그것은 날개 위로 머리를 올리고",
+              "그것은 날개를 펴고",
+              "그것은 머리를 흔들고"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "and points its beak at the air pocket.",
+            "meaning": "공기 주머니를 향해 부리를 겨눕니다.",
+            "role": "주절의 두 번째 동사구",
+            "options": [
+              "공기 주머니를 향해 부리를 겨눕니다.",
+              "공기 주머니를 부리로 쪼아 봅니다.",
+              "날개를 향해 부리를 겨눕니다.",
+              "껍질을 향해 부리를 겨눕니다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "be ready to-v",
+        "grammarExplanation": "'be ready to-v'는 '~할 준비가 되다'라는 뜻으로, 여기서는 'crack its way out of the shell(껍질을 깨고 나오다)'과 함께 쓰였습니다."
+      },
+      {
+        "sentence": "Then, just two days before it is hatched, it sticks its head into the air pocket and begins to use its lungs.",
+        "translation": "그러고 나서, 부화하기 단 이틀 전에, 그것은 공기 주머니 속으로 머리를 집어넣고 폐를 사용하기 시작합니다.",
+        "verb": "begins",
+        "verbMeaning": "시작하다",
+        "preposition": "into",
+        "prepositionMeaning": "~ 안으로",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "Then, just two days before it is hatched,",
+            "meaning": "그러고 나서, 부화하기 단 이틀 전에,",
+            "role": "시간 부사구 및 부사절",
+            "options": [
+              "그러고 나서, 부화하기 단 이틀 전에,",
+              "그러고 나서, 부화한 지 이틀 후에,",
+              "그러고 나서, 부화하기 일주일 전에,",
+              "그러고 나서, 알을 낳기 이틀 전에,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "it sticks its head into the air pocket",
+            "meaning": "그것은 공기 주머니 속으로 머리를 집어넣고",
+            "role": "주절의 첫 번째 동사구",
+            "options": [
+              "그것은 공기 주머니 속으로 머리를 집어넣고",
+              "그것은 날개 아래로 머리를 집어넣고",
+              "그것은 공기 주머니를 부리로 쪼고",
+              "그것은 머리를 밖으로 내밀고"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "and begins to use its lungs.",
+            "meaning": "폐를 사용하기 시작합니다.",
+            "role": "주절의 두 번째 동사구",
+            "options": [
+              "폐를 사용하기 시작합니다.",
+              "날개를 움직이기 시작합니다.",
+              "소리를 내기 시작합니다.",
+              "숨을 멈추기 시작합니다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "begin + to-v",
+        "grammarExplanation": "동사 'begin'은 목적어로 to부정사(to use)와 동명사 모두를 취할 수 있으며, '~하기 시작하다'라는 의미를 나타냅니다."
+      },
+      {
+        "sentence": "About a day later it begins regular breathing.",
+        "translation": "약 하루 뒤에 그것은 규칙적인 호흡을 시작합니다.",
+        "verb": "begins",
+        "verbMeaning": "시작하다",
+        "preposition": "About",
+        "prepositionMeaning": "~에 관하여",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "About a day later",
+            "meaning": "약 하루 뒤에",
+            "role": "시간 부사구",
+            "options": [
+              "약 하루 뒤에",
+              "약 이틀 뒤에",
+              "약 일주일 뒤에",
+              "약 한 시간 뒤에"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "it begins regular breathing.",
+            "meaning": "그것은 규칙적인 호흡을 시작합니다.",
+            "role": "주어 및 동사구",
+            "options": [
+              "그것은 규칙적인 호흡을 시작합니다.",
+              "그것은 불규칙하게 호흡합니다.",
+              "그것은 날갯짓을 시작합니다.",
+              "그것은 껍질을 깨기 시작합니다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "begin + 명사/동명사",
+        "grammarExplanation": "여기서 'begins' 뒤에 명사구 'regular breathing(규칙적인 호흡)'이 목적어로 쓰여 '~을 시작하다'라는 의미를 나타냅니다."
+      },
+      {
+        "sentence": "The chick has a special sharp point, called the egg tooth, at the tip of its beak.",
+        "translation": "그 병아리는 부리 끝에 난치(egg tooth)라고 불리는 특별하고 날카로운 돌기를 가지고 있다.",
+        "verb": "has",
+        "verbMeaning": "가지고 있다",
+        "preposition": "at",
+        "prepositionMeaning": "~에",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "The chick has a special sharp point,",
+            "meaning": "그 병아리는 특별하고 날카로운 돌기를 가지고 있다,",
+            "role": "주어와 동사, 목적어",
+            "options": [
+              "그 병아리는 특별하고 날카로운 돌기를 가지고 있다,",
+              "그 병아리는 부리를 쪼기 시작한다,",
+              "그 병아리는 알을 깨뜨린다,",
+              "그 병아리는 둥지를 짓는다,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "called the egg tooth,",
+            "meaning": "난치라고 불리는,",
+            "role": "명사를 수식하는 과거분사구",
+            "options": [
+              "난치라고 불리는,",
+              "부리라고 불리는,",
+              "깃털이라고 불리는,",
+              "날개라고 불리는,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "at the tip of its beak.",
+            "meaning": "그것의 부리 끝에.",
+            "role": "장소를 나타내는 전치사구",
+            "options": [
+              "그것의 부리 끝에.",
+              "그것의 날개 아래에.",
+              "그것의 둥지 안에.",
+              "그것의 머리 위에."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "Noun + called + Noun",
+        "grammarExplanation": "called는 '~라고 불리는'이라는 뜻의 과거분사로, 앞의 명사 a special sharp point를 수식합니다."
+      },
+      {
+        "sentence": "With this point the chick pecks the shell many, many times before it finally breaks through.",
+        "translation": "이 돌기로 병아리는 마침내 껍질을 뚫고 나오기 전에 껍질을 아주 여러 번 쪼아댄다.",
+        "verb": "pecks",
+        "verbMeaning": "쪼아댄다",
+        "preposition": "With",
+        "prepositionMeaning": "~으로",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "With this point",
+            "meaning": "이 돌기로",
+            "role": "도구를 나타내는 전치사구",
+            "options": [
+              "이 돌기로",
+              "이 부리로",
+              "이 날개로",
+              "이 발톱으로"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "the chick pecks the shell many, many times",
+            "meaning": "병아리는 껍질을 아주 여러 번 쪼아댄다",
+            "role": "주절",
+            "options": [
+              "병아리는 껍질을 아주 여러 번 쪼아댄다",
+              "병아리는 알 속에서 잠을 잔다",
+              "병아리는 껍질을 밀어낸다",
+              "병아리는 소리를 내며 운다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "before it finally breaks through.",
+            "meaning": "그것이 마침내 뚫고 나오기 전에.",
+            "role": "시간을 나타내는 부사절",
+            "options": [
+              "그것이 마침내 뚫고 나오기 전에.",
+              "그것이 알을 품기 전에.",
+              "그것이 잠에서 깨어나기 전에.",
+              "그것이 먹이를 먹기 전에."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "before + S + V",
+        "grammarExplanation": "before는 '~하기 전에'라는 뜻의 접속사로, 시간의 부사절을 이끕니다."
+      },
+      {
+        "sentence": "Once the chick has cracked a hole through the shell, it rests.",
+        "translation": "일단 병아리가 껍질을 뚫고 구멍을 내면, 그것은 휴식을 취한다.",
+        "verb": "rests",
+        "verbMeaning": "휴식을 취한다",
+        "preposition": "through",
+        "prepositionMeaning": "~을 통과하여",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "Once the chick has cracked a hole",
+            "meaning": "일단 병아리가 구멍을 내면",
+            "role": "조건을 나타내는 부사절",
+            "options": [
+              "일단 병아리가 구멍을 내면",
+              "병아리가 알을 깨뜨릴 때",
+              "병아리가 껍질을 쪼기 시작하면",
+              "병아리가 밖으로 나오면"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "through the shell,",
+            "meaning": "껍질을 뚫고,",
+            "role": "방향을 나타내는 전치사구",
+            "options": [
+              "껍질을 뚫고,",
+              "둥지 안으로,",
+              "하늘을 향해,",
+              "땅 위로,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "it rests.",
+            "meaning": "그것은 휴식을 취한다.",
+            "role": "주절",
+            "options": [
+              "그것은 휴식을 취한다.",
+              "그것은 계속해서 쪼아댄다.",
+              "그것은 소리를 지른다.",
+              "그것은 잠을 잔다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "Once + S + has p.p.",
+        "grammarExplanation": "Once는 '일단 ~하면'이라는 뜻의 접속사이며, 현재완료 시제(has cracked)와 함께 쓰여 동작이 완료된 상황을 나타냅니다."
+      },
+      {
+        "sentence": "The little open window lets it get used to the outside air.",
+        "translation": "그 작은 열린 창(구멍)은 그것이 바깥 공기에 익숙해지도록 해 준다.",
+        "verb": "lets",
+        "verbMeaning": "~하게 하다",
+        "preposition": "to",
+        "prepositionMeaning": "~에",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "The little open window",
+            "meaning": "그 작은 열린 창은",
+            "role": "주어",
+            "options": [
+              "그 작은 열린 창은",
+              "그 단단한 껍질은",
+              "그 날카로운 부리는",
+              "그 따뜻한 둥지는"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "lets it get used",
+            "meaning": "그것이 익숙해지도록 해 준다",
+            "role": "동사와 목적어, 목적격 보어",
+            "options": [
+              "그것이 익숙해지도록 해 준다",
+              "그것이 밖으로 나오게 해 준다",
+              "그것이 숨을 쉬게 해 준다",
+              "그것이 잠을 자게 해 준다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "to the outside air.",
+            "meaning": "바깥 공기에.",
+            "role": "전치사구",
+            "options": [
+              "바깥 공기에.",
+              "따뜻한 온도에.",
+              "어두운 환경에.",
+              "엄마의 품에."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "let + 목적어 + 동사원형",
+        "grammarExplanation": "사역동사 let은 목적어(it) 뒤에 목적격 보어로 동사원형(get)을 취합니다. 'get used to'는 '~에 익숙해지다'라는 뜻입니다."
+      },
+      {
+        "sentence": "When the chick has rested, it may take several hours more for it to break the rest of the shell away and climb out.",
+        "translation": "병아리가 휴식을 취하고 나면, 그것이 나머지 껍질을 깨뜨려 버리고 밖으로 기어 나오는 데 몇 시간이 더 걸릴 수도 있다.",
+        "verb": "take",
+        "verbMeaning": "걸리다",
+        "preposition": "of",
+        "prepositionMeaning": "~의",
+        "grammarGlosses": [],
+        "chunks": [
+          {
+            "text": "When the chick has rested,",
+            "meaning": "병아리가 휴식을 취하고 나면,",
+            "role": "시간을 나타내는 부사절",
+            "options": [
+              "병아리가 휴식을 취하고 나면,",
+              "병아리가 알을 깨고 나면,",
+              "병아리가 밖으로 나오고 나면,",
+              "병아리가 잠에서 깨고 나면,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "it may take several hours more",
+            "meaning": "몇 시간이 더 걸릴 수도 있다",
+            "role": "주절 (가주어 구문 일부)",
+            "options": [
+              "몇 시간이 더 걸릴 수도 있다",
+              "며칠이 더 걸릴 수도 있다",
+              "몇 분이 더 걸릴 수도 있다",
+              "금방 끝날 수도 있다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "for it to break the rest of the shell away",
+            "meaning": "그것이 나머지 껍질을 깨뜨려 버리는 데",
+            "role": "의미상 주어와 to부정사구",
+            "options": [
+              "그것이 나머지 껍질을 깨뜨려 버리는 데",
+              "그것이 먹이를 찾아 먹는 데",
+              "그것이 날개짓을 배우는 데",
+              "그것이 엄마를 만나는 데"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "and climb out.",
+            "meaning": "그리고 밖으로 기어 나오는 데.",
+            "role": "병렬 연결된 to부정사구",
+            "options": [
+              "그리고 밖으로 기어 나오는 데.",
+              "그리고 하늘을 나는 데.",
+              "그리고 소리를 내어 우는 데.",
+              "그리고 잠을 자는 데."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "grammarPattern": "It takes + 시간 + for 의미상주어 + to-v",
+        "grammarExplanation": "it은 가주어, to break와 (to) climb out이 진주어이며, for it은 to부정사의 의미상 주어입니다. '시간이 ~하는 데 걸리다'라는 뜻을 나타냅니다."
+      }
+    ]
+  }
+]

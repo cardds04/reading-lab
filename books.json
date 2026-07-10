@@ -2188,5 +2188,2403 @@
         "geminiStudyVersion": 2
       }
     ]
+  },
+  {
+    "title": "More About Dinosaurs",
+    "savedAt": "2026-07-10T13:27:58.294Z",
+    "srLevel": "직접 입력",
+    "sentences": [
+      {
+        "verb": "were",
+        "verbs": [
+          "ruled",
+          "were",
+          "didn't need"
+        ],
+        "chunks": [
+          {
+            "role": "Subject with relative clause",
+            "text": "Some of the dinosaurs that once ruled the Earth",
+            "meaning": "한때 지구를 지배했던 공룡들 중 일부는",
+            "options": [
+              "한때 지구를 지배했던 공룡들 중 일부는",
+              "지구에 살았던 모든 공룡들은",
+              "공룡들이 지배했던 지구의 일부 지역은",
+              "지구를 지배하기 시작한 공룡들은"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Verb and adjective complement (so...)",
+            "text": "were so big and strong",
+            "meaning": "너무 크고 강해서",
+            "options": [
+              "매우 작고 약해서",
+              "너무 크고 강해서",
+              "점점 더 크고 강해져서",
+              "크고 강하게 보였지만"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "Result clause (that...) with verb phrase",
+            "text": "that they didn't need to be afraid of",
+            "meaning": "그들이 ~을 두려워할 필요가 없었다",
+            "options": [
+              "그들이 반드시 두려워해야 했던",
+              "그들이 두려워하기 시작했던",
+              "그들이 ~을 두려워할 필요가 없었다",
+              "그들이 두려움을 극복해야 했던"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "role": "Object of preposition",
+            "text": "any other living thing.",
+            "meaning": "다른 어떤 살아있는 생물도",
+            "options": [
+              "오직 거대한 생물들만",
+              "다른 어떤 살아있는 생물도",
+              "지구상의 모든 무생물들을",
+              "자신보다 더 강한 생물을"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "be afraid of",
+            "meaning": "~을 두려워하다"
+          },
+          {
+            "phrase": "so ... that ~",
+            "meaning": "너무 ...해서 ~하다"
+          }
+        ],
+        "sentence": "Some of the dinosaurs that once ruled the Earth were so big and strong that they didn't need to be afraid of any other living thing.",
+        "preposition": "of",
+        "translation": "한때 지구를 지배했던 공룡들 중 일부는 너무 크고 강해서 다른 어떤 살아있는 생물도 두려워할 필요가 없었다.",
+        "verbMeaning": "이었다",
+        "wordGlosses": [
+          {
+            "word": "Some",
+            "meaning": "일부"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "once",
+            "meaning": "한때"
+          },
+          {
+            "word": "ruled",
+            "meaning": "지배했다"
+          },
+          {
+            "word": "Earth",
+            "meaning": "지구"
+          },
+          {
+            "word": "were",
+            "meaning": "이었다"
+          },
+          {
+            "word": "so",
+            "meaning": "너무"
+          },
+          {
+            "word": "big",
+            "meaning": "큰"
+          },
+          {
+            "word": "strong",
+            "meaning": "강한"
+          },
+          {
+            "word": "they",
+            "meaning": "그들"
+          },
+          {
+            "word": "didn't",
+            "meaning": "않았다"
+          },
+          {
+            "word": "need",
+            "meaning": "필요하다"
+          },
+          {
+            "word": "afraid",
+            "meaning": "두려워하는"
+          },
+          {
+            "word": "living",
+            "meaning": "살아있는"
+          },
+          {
+            "word": "thing",
+            "meaning": "생물, 것"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "so + 형용사/부사 + that + 주어 + 동사",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "한때 지구를 지배했던 공룡들 중 일부는 너무 크고 강해서 다른 어떤 살아있는 생물도 두려워할 필요가 없었다.",
+          "지구를 지배했던 모든 공룡들은 너무 크고 강해서 다른 살아있는 생물들을 두려워하게 만들었다.",
+          "일부 공룡들은 지구를 지배하기 위해 너무 크고 강해질 필요가 없었으며 다른 생물들을 두려워했다.",
+          "한때 지구를 지배했던 공룡들은 너무 크고 강했지만 다른 살아있는 생물들을 항상 두려워했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "'so + 형용사/부사 + that ~' 구문은 '너무 ...해서 ~하다'라는 원인과 결과를 나타냅니다. 이 문장에서는 공룡들이 너무 크고 강해서(so big and strong) 그 결과 다른 어떤 살아있는 생물도 두려워할 필요가 없었다(that they didn't need to be afraid of...)는 의미를 나타냅니다. 또한 'that once ruled the Earth'는 관계대명사절로 'the dinosaurs'를 수식합니다.",
+        "prepositionMeaning": "~을/를 (두려워하는 대상)"
+      },
+      {
+        "verb": "disappear",
+        "verbs": [
+          "did",
+          "disappear"
+        ],
+        "chunks": [
+          {
+            "role": "adverbial phrase",
+            "text": "How, then,",
+            "meaning": "그렇다면, 어떻게",
+            "options": [
+              "그렇다면, 어떻게",
+              "왜냐하면, 그때",
+              "어디서, 그리고",
+              "언제, 그러면"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "subject with auxiliary verb",
+            "text": "did the mighty dinosaurs",
+            "meaning": "그 거대한 공룡들이 ~했는가",
+            "options": [
+              "그 거대한 공룡들이 ~했는가",
+              "그 작은 공룡들이 사라졌는가",
+              "거대한 공룡들이 살았는가",
+              "그 힘센 공룡들을 보았는가"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "main verb",
+            "text": "disappear?",
+            "meaning": "사라졌을까?",
+            "options": [
+              "사라졌을까?",
+              "나타났을까?",
+              "살아남았을까?",
+              "번식했을까?"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [],
+        "sentence": "How, then, did the mighty dinosaurs disappear?",
+        "preposition": "",
+        "translation": "그렇다면, 그 거대한 공룡들은 어떻게 사라졌을까?",
+        "verbMeaning": "사라지다",
+        "wordGlosses": [
+          {
+            "word": "How",
+            "meaning": "어떻게"
+          },
+          {
+            "word": "then",
+            "meaning": "그렇다면"
+          },
+          {
+            "word": "did",
+            "meaning": "했다 (과거형 조동사)"
+          },
+          {
+            "word": "the",
+            "meaning": "그"
+          },
+          {
+            "word": "mighty",
+            "meaning": "거대한, 힘센"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "disappear",
+            "meaning": "사라지다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "의문사 + 조동사(did) + 주어 + 동사원형",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "그렇다면, 그 거대한 공룡들은 어떻게 사라졌을까?",
+          "어떻게 그 거대한 공룡들이 나타났을까?",
+          "그렇다면, 왜 거대한 공룡들이 멸종을 피했을까?",
+          "그 당시에, 거대한 공룡들은 어디로 이동했을까?"
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "과거 시점의 의문을 나타내기 위해 의문사 'How' 뒤에 조동사 'did'가 오고, 주어 'the mighty dinosaurs' 뒤에 동사원형 'disappear'가 위치하는 의문문 구조입니다. 삽입어 'then'은 '그렇다면'이라는 의미로 논리적 연결을 돕습니다.",
+        "prepositionMeaning": ""
+      },
+      {
+        "verb": "aren't",
+        "verbs": [
+          "aren't"
+        ],
+        "chunks": [
+          {
+            "role": "의문사 및 동사구",
+            "text": "Why aren't there",
+            "meaning": "왜 없나요",
+            "options": [
+              "왜 없나요",
+              "왜 있나요",
+              "어떻게 존재하나요",
+              "언제 사라졌나요"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "주어 및 부사구",
+            "text": "dinosaurs today?",
+            "meaning": "오늘날 공룡들이",
+            "options": [
+              "과거의 공룡들이",
+              "오늘날 공룡들이",
+              "미래의 공룡들이",
+              "공룡의 뼈들이"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "there aren't",
+            "meaning": "~들이 없다"
+          }
+        ],
+        "sentence": "Why aren't there dinosaurs today?",
+        "preposition": "",
+        "translation": "왜 오늘날에는 공룡이 없나요?",
+        "verbMeaning": "없다",
+        "wordGlosses": [
+          {
+            "word": "Why",
+            "meaning": "왜"
+          },
+          {
+            "word": "aren't",
+            "meaning": "없다 (are not의 축약형)"
+          },
+          {
+            "word": "there",
+            "meaning": "거기에 (there be 구문에서 '있다'를 나타냄)"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "today",
+            "meaning": "오늘날"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Why aren't there + 복수명사?",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "왜 오늘날에는 공룡이 없나요?",
+          "공룡은 왜 오늘날에만 사나요?",
+          "왜 공룡은 오늘날 존재하나요?",
+          "오늘날 공룡이 왜 발견되나요?"
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "there are(있다)의 부정의문문 형태로, '왜 ~들이 없나요?'라는 질문을 나타냅니다. 주어가 복수명사(dinosaurs)이므로 복수 동사 are의 부정 축약형인 aren't가 사용되었습니다.",
+        "prepositionMeaning": ""
+      },
+      {
+        "verb": "knows",
+        "verbs": [
+          "knows"
+        ],
+        "chunks": [
+          {
+            "role": "subject",
+            "text": "No one",
+            "meaning": "아무도",
+            "options": [
+              "아무도",
+              "모든 사람이",
+              "누군가가",
+              "그들이"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "verb",
+            "text": "knows",
+            "meaning": "모른다 (부정 주어와 결합)",
+            "options": [
+              "알고 있다",
+              "모른다",
+              "말한다",
+              "생각한다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "adverbial",
+            "text": "for sure",
+            "meaning": "확실히",
+            "options": [
+              "확실히",
+              "아마도",
+              "절대로",
+              "갑자기"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "for sure",
+            "meaning": "확실히"
+          }
+        ],
+        "sentence": "No one knows for sure.",
+        "preposition": "for",
+        "translation": "아무도 확실히는 모른다.",
+        "verbMeaning": "알다",
+        "wordGlosses": [
+          {
+            "word": "No",
+            "meaning": "어떤 ~도 없는"
+          },
+          {
+            "word": "one",
+            "meaning": "사람"
+          },
+          {
+            "word": "knows",
+            "meaning": "알다"
+          },
+          {
+            "word": "for",
+            "meaning": "~을 위해"
+          },
+          {
+            "word": "sure",
+            "meaning": "확실한"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "No one + 단수 동사",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "아무도 확실히는 모른다.",
+          "모두가 확실히 알고 있다.",
+          "누군가는 확실히 알고 있다.",
+          "아무도 그것을 믿지 않는다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "주어 자리에 'No one'이 오면 전체 문장이 부정문이 되며, 동사는 단수 형태(knows)를 취합니다. 'for sure'는 '확실히'라는 뜻의 부사구입니다.",
+        "prepositionMeaning": "~을 위해 (여기서는 'for sure'의 일부)"
+      },
+      {
+        "verb": "do know",
+        "verbs": [
+          "do know",
+          "were living",
+          "began"
+        ],
+        "chunks": [
+          {
+            "role": "Main clause (Subject + Emphatic Verb + Conjunction)",
+            "text": "But we do know that",
+            "meaning": "하지만 우리는 ~라는 것을 정말로 알고 있다",
+            "options": [
+              "하지만 우리는 ~라는 것을 정말로 알고 있다",
+              "그리고 우리는 ~라고 생각한다",
+              "하지만 우리는 ~인지 의심스럽다",
+              "그래서 우리는 ~를 알게 되었다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Adverbial phrase of time with relative clause",
+            "text": "at the time the dinosaurs were living,",
+            "meaning": "공룡들이 살고 있던 당시에",
+            "options": [
+              "공룡들이 멸종한 직후에",
+              "공룡들이 살고 있던 당시에",
+              "공룡들이 나타나기 전에",
+              "날씨가 따뜻해졌을 때"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "Subordinate clause (Subject + Verb + Infinitive Object)",
+            "text": "the weather began to change.",
+            "meaning": "날씨가 변하기 시작했다",
+            "options": [
+              "날씨가 추워지기 시작했다",
+              "날씨가 변하기 시작했다",
+              "기후가 안정되기 시작했다",
+              "공룡들이 이동하기 시작했다"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "at the time",
+            "meaning": "~할 당시에"
+          },
+          {
+            "phrase": "begin to",
+            "meaning": "~하기 시작하다"
+          }
+        ],
+        "sentence": "But we do know that at the time the dinosaurs were living, the weather began to change.",
+        "preposition": "at",
+        "translation": "하지만 우리는 공룡들이 살고 있던 당시에 날씨가 변하기 시작했다는 것을 정말로 알고 있다.",
+        "verbMeaning": "정말로 알고 있다",
+        "wordGlosses": [
+          {
+            "word": "But",
+            "meaning": "하지만"
+          },
+          {
+            "word": "we",
+            "meaning": "우리는"
+          },
+          {
+            "word": "do",
+            "meaning": "정말로 (강조)"
+          },
+          {
+            "word": "know",
+            "meaning": "알다"
+          },
+          {
+            "word": "that",
+            "meaning": "~라는 것을"
+          },
+          {
+            "word": "at",
+            "meaning": "~에"
+          },
+          {
+            "word": "the",
+            "meaning": "그"
+          },
+          {
+            "word": "time",
+            "meaning": "시간, 당시"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "were",
+            "meaning": "~였다"
+          },
+          {
+            "word": "living",
+            "meaning": "살고 있는"
+          },
+          {
+            "word": "weather",
+            "meaning": "날씨"
+          },
+          {
+            "word": "began",
+            "meaning": "시작했다"
+          },
+          {
+            "word": "to",
+            "meaning": "~하는 것을"
+          },
+          {
+            "word": "change",
+            "meaning": "변하다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Emphatic 'do' & Noun Clause with 'that'",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "하지만 우리는 공룡들이 살고 있던 당시에 날씨가 변하기 시작했다는 것을 정말로 알고 있다.",
+          "하지만 우리는 공룡들이 사라진 후에 날씨가 갑자기 추워졌다는 것을 알고 있다.",
+          "그러나 우리는 공룡들이 살기 전에 날씨가 이미 변했다는 것을 알고 있다.",
+          "하지만 우리는 공룡들이 살았던 시대에는 날씨가 전혀 변하지 않았음을 알고 있다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "동사 know 앞에 쓰인 'do'는 동사의 의미를 강조하는 조동사이며, 'that'은 know의 목적어 역할을 하는 명사절을 이끄는 접속사입니다. 'at the time (when) the dinosaurs were living'에서 관계부사 when이 생략되어 'dinosaurs were living'이 time을 수식합니다.",
+        "prepositionMeaning": "~에"
+      },
+      {
+        "verb": "began",
+        "verbs": [
+          "began"
+        ],
+        "chunks": [
+          {
+            "role": "Subject",
+            "text": "The summers",
+            "meaning": "여름이",
+            "options": [
+              "여름이",
+              "겨울이",
+              "날씨가",
+              "하루가"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Verb Phrase",
+            "text": "began to grow",
+            "meaning": "되기 시작했다",
+            "options": [
+              "멈추기 시작했다",
+              "되기 시작했다",
+              "사라지기 시작했다",
+              "계속되었다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "Complement",
+            "text": "shorter",
+            "meaning": "더 짧게",
+            "options": [
+              "더 길게",
+              "더 덥게",
+              "더 짧게",
+              "더 춥게"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "begin to",
+            "meaning": "~하기 시작하다"
+          },
+          {
+            "phrase": "grow shorter",
+            "meaning": "더 짧아지다"
+          }
+        ],
+        "sentence": "The summers began to grow shorter.",
+        "preposition": "",
+        "translation": "여름이 더 짧아지기 시작했다.",
+        "verbMeaning": "시작했다",
+        "wordGlosses": [
+          {
+            "word": "The",
+            "meaning": "그"
+          },
+          {
+            "word": "summers",
+            "meaning": "여름들"
+          },
+          {
+            "word": "began",
+            "meaning": "시작했다"
+          },
+          {
+            "word": "to",
+            "meaning": "~하기"
+          },
+          {
+            "word": "grow",
+            "meaning": "되다"
+          },
+          {
+            "word": "shorter",
+            "meaning": "더 짧은"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "begin + to-infinitive / grow + adjective",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "여름이 더 짧아지기 시작했다.",
+          "여름이 더 길어지기 시작했다.",
+          "여름이 갑자기 찾아왔다.",
+          "여름이 끝나지 않을 것 같았다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "'begin' 동사는 목적어로 to부정사를 취하여 '~하기 시작하다'라는 의미를 나타내며, 'grow'는 이형식 연결동사로 뒤에 형용사 비교급 'shorter'가 와서 '더 ~해지다'라는 상태의 변화를 나타냅니다.",
+        "prepositionMeaning": ""
+      },
+      {
+        "verb": "began",
+        "verbs": [
+          "began"
+        ],
+        "chunks": [
+          {
+            "role": "Subject",
+            "text": "The winters",
+            "meaning": "겨울이",
+            "options": [
+              "겨울이",
+              "여름이",
+              "날씨가",
+              "바람이"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Predicate",
+            "text": "began to grow colder",
+            "meaning": "더 추워지기 시작했다",
+            "options": [
+              "더 따뜻해지기 시작했다",
+              "더 추워지기 시작했다",
+              "갑자기 끝났다",
+              "눈이 내리기 시작했다"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "grow colder",
+            "meaning": "더 추워지다"
+          }
+        ],
+        "sentence": "The winters began to grow colder.",
+        "preposition": "",
+        "translation": "겨울이 더 추워지기 시작했다.",
+        "verbMeaning": "시작했다",
+        "wordGlosses": [
+          {
+            "word": "The",
+            "meaning": "그"
+          },
+          {
+            "word": "winters",
+            "meaning": "겨울들"
+          },
+          {
+            "word": "began",
+            "meaning": "시작했다"
+          },
+          {
+            "word": "to",
+            "meaning": "~하기"
+          },
+          {
+            "word": "grow",
+            "meaning": "되다"
+          },
+          {
+            "word": "colder",
+            "meaning": "더 추운"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "begin + to-infinitive / grow + adjective",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "겨울이 더 추워지기 시작했다.",
+          "겨울이 더 따뜻해지기 시작했다.",
+          "여름이 더 추워지기 시작했다.",
+          "겨울이 갑자기 찾아왔다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "동사 begin은 목적어로 to부정사(to grow)를 취하여 '~하기 시작하다'라는 의미를 나타냅니다. 또한 'grow + 형용사(비교급)' 패턴은 '~한 상태가 되다(점점 더 ~해지다)'라는 상태의 변화를 나타냅니다.",
+        "prepositionMeaning": ""
+      },
+      {
+        "verb": "dried up",
+        "verbs": [
+          "dried",
+          "turned"
+        ],
+        "chunks": [
+          {
+            "role": "subject and verb of the first clause",
+            "text": "Rivers dried up,",
+            "meaning": "강들은 바짝 말라붙었고,",
+            "options": [
+              "강들은 바짝 말라붙었고,",
+              "강들은 흘러넘쳤고,",
+              "강들은 얼어붙었고,",
+              "강들은 깊어졌고,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "conjunction, subject and verb of the second clause",
+            "text": "and the swamps turned into",
+            "meaning": "그리고 습지들은 ~로 변했다",
+            "options": [
+              "그리고 습지들은 ~로 변했다",
+              "하지만 습지들은 사라졌다",
+              "그리고 강들은 흘러갔다",
+              "그래서 나무들은 자라났다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "prepositional object",
+            "text": "hard clay.",
+            "meaning": "단단한 진흙으로.",
+            "options": [
+              "부드러운 모래로.",
+              "단단한 진흙으로.",
+              "깊은 호수로.",
+              "넓은 평원으로."
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "dry up",
+            "meaning": "바짝 마르다"
+          },
+          {
+            "phrase": "turn into",
+            "meaning": "~로 변하다"
+          }
+        ],
+        "sentence": "Rivers dried up, and the swamps turned into hard clay.",
+        "preposition": "into",
+        "translation": "강들은 바짝 말라붙었고, 습지들은 단단한 진흙으로 변했다.",
+        "verbMeaning": "마르다, 변하다",
+        "wordGlosses": [
+          {
+            "word": "Rivers",
+            "meaning": "강들"
+          },
+          {
+            "word": "dried",
+            "meaning": "말랐다"
+          },
+          {
+            "word": "up",
+            "meaning": "완전히, 바짝"
+          },
+          {
+            "word": "and",
+            "meaning": "그리고"
+          },
+          {
+            "word": "the",
+            "meaning": "그"
+          },
+          {
+            "word": "swamps",
+            "meaning": "습지들"
+          },
+          {
+            "word": "turned",
+            "meaning": "변했다"
+          },
+          {
+            "word": "into",
+            "meaning": "~로"
+          },
+          {
+            "word": "hard",
+            "meaning": "단단한"
+          },
+          {
+            "word": "clay",
+            "meaning": "진흙, 찰흙"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "S1 + V1 (phrasal verb), and S2 + V2 + prepositional phrase",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "강들은 바짝 말라붙었고, 습지들은 단단한 진흙으로 변했다.",
+          "강들이 흘러넘쳤고, 습지들은 부드러운 모래가 되었다.",
+          "강들은 얼어붙었고, 습지들은 깊은 호수로 변했다.",
+          "강들은 말라붙었지만, 습지들은 여전히 축축했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "이 문장은 등위접속사 'and'로 연결된 두 개의 독립된 절로 구성되어 있습니다. 첫 번째 절의 동사구 'dried up'은 '완전히 마르다'라는 뜻의 구동사이며, 두 번째 절의 'turned into'는 '~로 변하다'라는 뜻으로 상태의 변화를 나타내는 전치사 'into'와 함께 쓰였습니다.",
+        "prepositionMeaning": "~로 (상태의 변화)"
+      },
+      {
+        "verb": "erupted",
+        "verbs": [
+          "erupted",
+          "pushed",
+          "shoved",
+          "folded"
+        ],
+        "chunks": [
+          {
+            "role": "Main clause with participle clause",
+            "text": "Volcanoes erupted, throwing hot lava across the earth,",
+            "meaning": "화산이 폭발하여 지구 전역에 뜨거운 용암을 분출했고,",
+            "options": [
+              "화산이 폭발하여 지구 전역에 뜨거운 용암을 분출했고,",
+              "화산이 멈추고 지구 전역에 차가운 물을 뿌렸고,",
+              "화산이 폭발하여 바다 속으로 뜨거운 용암을 흘려보냈고,",
+              "화산이 폭발하여 하늘 높이 화산재를 날려보냈고,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Coordinate clause (subject and verbs)",
+            "text": "and the low land pushed...and shoved...",
+            "meaning": "그리고 낮은 땅은 밀리고... 밀려...",
+            "options": [
+              "그리고 낮은 땅은 밀리고... 밀려...",
+              "그리고 높은 산은 무너지고... 깨져...",
+              "그리고 깊은 바다는 솟아오르고... 갈라져...",
+              "그리고 넓은 평원은 가라앉고... 굳어져..."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Coordinate clause with infinitive of result",
+            "text": "And folded back to form mountains.",
+            "meaning": "그리고 뒤로 접히며 산을 형성했다.",
+            "options": [
+              "그리고 뒤로 접히며 산을 형성했다.",
+              "그리고 앞으로 쏠리며 평지를 형성했다.",
+              "그리고 옆으로 퍼지며 섬을 형성했다.",
+              "그리고 아래로 꺼지며 계곡을 형성했다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "fold back",
+            "meaning": "뒤로 접히다"
+          },
+          {
+            "phrase": "throw across",
+            "meaning": "~ 너머로 던지다 (분출하다)"
+          }
+        ],
+        "sentence": "Volcanoes erupted, throwing hot lava across the earth, and the low land pushed...and shoved...And folded back to form mountains.",
+        "preposition": "across",
+        "translation": "화산이 폭발하여 지구 전역에 뜨거운 용암을 분출했고, 낮은 땅은 밀리고 밀려... 그리고 뒤로 접히며 산을 형성했다.",
+        "verbMeaning": "분출했다",
+        "wordGlosses": [
+          {
+            "word": "Volcanoes",
+            "meaning": "화산들"
+          },
+          {
+            "word": "erupted",
+            "meaning": "분출했다"
+          },
+          {
+            "word": "throwing",
+            "meaning": "던지며 (분출하며)"
+          },
+          {
+            "word": "hot",
+            "meaning": "뜨거운"
+          },
+          {
+            "word": "lava",
+            "meaning": "용암"
+          },
+          {
+            "word": "across",
+            "meaning": "~ 전역에"
+          },
+          {
+            "word": "earth",
+            "meaning": "지구 (땅)"
+          },
+          {
+            "word": "low",
+            "meaning": "낮은"
+          },
+          {
+            "word": "land",
+            "meaning": "땅"
+          },
+          {
+            "word": "pushed",
+            "meaning": "밀었다 (밀렸다)"
+          },
+          {
+            "word": "shoved",
+            "meaning": "밀쳤다 (밀쳐졌다)"
+          },
+          {
+            "word": "folded",
+            "meaning": "접혔다"
+          },
+          {
+            "word": "back",
+            "meaning": "뒤로"
+          },
+          {
+            "word": "form",
+            "meaning": "형성하다"
+          },
+          {
+            "word": "mountains",
+            "meaning": "산들"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Participle construction & Coordinate clauses with ellipsis",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "화산이 폭발하여 지구 전역에 뜨거운 용암을 분출했고, 낮은 땅은 밀리고 밀려... 그리고 뒤로 접히며 산을 형성했다.",
+          "화산이 폭발하여 지구 전역에 뜨거운 용암을 분출했고, 높은 산은 무너지고 깨져... 그리고 앞으로 쏠리며 평지를 형성했다.",
+          "화산이 폭발하여 바다 속으로 뜨거운 용암을 분출했고, 낮은 땅은 솟아오르고 갈라져... 그리고 옆으로 퍼지며 섬을 형성했다.",
+          "화산이 폭발하여 하늘 높이 뜨거운 용암을 분출했고, 낮은 땅은 가라앉고 굳어져... 그리고 아래로 꺼지며 계곡을 형성했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "이 문장은 분사구문(throwing...)을 동반한 주절과, 등위접속사 and로 연결된 여러 개의 과거동사(pushed, shoved, folded)가 병렬 구조를 이루고 있습니다. 'to form'은 결과의 부사적 용법으로 '결국 ~을 형성했다'로 해석됩니다.",
+        "prepositionMeaning": "~ 전역에"
+      },
+      {
+        "verb": "disappeared",
+        "verbs": [
+          "had eaten",
+          "disappeared"
+        ],
+        "chunks": [
+          {
+            "role": "Adverbial phrase (Time/Cause)",
+            "text": "With the coming of glaciers,",
+            "meaning": "빙하기가 도래하면서,",
+            "options": [
+              "빙하기가 도래하면서,",
+              "빙하기가 끝나면서,",
+              "빙하가 녹아내리면서,",
+              "빙하를 피해서,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Subject of the main clause",
+            "text": "much of the plant food",
+            "meaning": "식물성 먹이의 상당 부분이",
+            "options": [
+              "식물성 먹이의 상당 부분이",
+              "육식성 먹이의 대부분이",
+              "공룡들의 서식지가",
+              "식물의 씨앗들이"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Relative clause modifying 'plant food'",
+            "text": "that some of the dinosaurs had eaten for millions of years",
+            "meaning": "일부 공룡들이 수백만 년 동안 먹고살았던",
+            "options": [
+              "일부 공룡들이 수백만 년 동안 먹고살았던",
+              "대부분의 공룡들이 갑자기 찾아낸",
+              "수백만 년 동안 보존되어 온",
+              "공룡들이 먹기를 거부했던"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Main verb",
+            "text": "disappeared.",
+            "meaning": "사라졌다.",
+            "options": [
+              "사라졌다.",
+              "풍부해졌다.",
+              "발견되었다.",
+              "변화했다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "the coming of",
+            "meaning": "~의 도래, 시작"
+          },
+          {
+            "phrase": "millions of",
+            "meaning": "수백만의, 수많은"
+          }
+        ],
+        "sentence": "With the coming of glaciers, much of the plant food that some of the dinosaurs had eaten for millions of years disappeared.",
+        "preposition": "With",
+        "translation": "빙하기가 도래하면서, 일부 공룡들이 수백만 년 동안 먹고살았던 식물성 먹이의 상당 부분이 사라졌다.",
+        "verbMeaning": "사라졌다",
+        "wordGlosses": [
+          {
+            "word": "With",
+            "meaning": "~와 함께, ~로 인해"
+          },
+          {
+            "word": "coming",
+            "meaning": "도래, 시작"
+          },
+          {
+            "word": "glaciers",
+            "meaning": "빙하"
+          },
+          {
+            "word": "much",
+            "meaning": "많은 부분, 상당량"
+          },
+          {
+            "word": "plant",
+            "meaning": "식물"
+          },
+          {
+            "word": "food",
+            "meaning": "먹이, 음식"
+          },
+          {
+            "word": "that",
+            "meaning": "~하는 (관계대명사)"
+          },
+          {
+            "word": "some",
+            "meaning": "일부, 몇몇"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "had eaten",
+            "meaning": "먹었었다"
+          },
+          {
+            "word": "for",
+            "meaning": "~ 동안"
+          },
+          {
+            "word": "millions",
+            "meaning": "수백만"
+          },
+          {
+            "word": "years",
+            "meaning": "해, 년"
+          },
+          {
+            "word": "disappeared",
+            "meaning": "사라졌다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Past Perfect (had eaten) & Relative Clause (that)",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "빙하기가 도래하면서, 일부 공룡들이 수백만 년 동안 먹고살았던 식물성 먹이의 상당 부분이 사라졌다.",
+          "빙하기가 끝나면서, 일부 공룡들이 수백만 년 동안 먹었던 식물성 먹이가 다시 자라났다.",
+          "빙하기가 오자, 공룡들은 수백만 년 동안 먹을 수 있는 식물성 먹이를 찾아 이동했다.",
+          "빙하기의 도래로 인해, 많은 공룡들이 수백만 년 동안 먹었던 식물성 먹이를 보존할 수 있었다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "관계대명사 'that'이 이끄는 형용사절 'that some of the dinosaurs had eaten for millions of years'가 선행사 'the plant food'를 수식합니다. 또한, 주절의 동사 'disappeared'(과거)보다 공룡들이 먹이를 먹었던 행위가 더 이전부터 일어난 일이므로 과거완료 시제 'had eaten'이 사용되었습니다.",
+        "prepositionMeaning": "~의 도래와 함께, ~로 인해"
+      },
+      {
+        "verb": "were",
+        "verbs": [
+          "were",
+          "had"
+        ],
+        "chunks": [
+          {
+            "role": "주절 (주어 + 동사 + 보어)",
+            "text": "The dinosaurs' bodies were so enormous",
+            "meaning": "공룡들의 몸집은 너무 거대해서",
+            "options": [
+              "공룡들의 몸집은 너무 거대해서",
+              "공룡들은 항상 배가 고파서",
+              "공룡들의 뼈는 아주 단단해서",
+              "공룡들의 몸집이 작았기 때문에"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "결과절 (접속사 + 주어 + 부사 + 동사)",
+            "text": "that they always had to eat",
+            "meaning": "그들은 항상 먹어야만 했다",
+            "options": [
+              "그들은 항상 먹어야만 했다",
+              "그들은 음식을 남겨야 했다",
+              "그들은 먹는 것을 멈출 수 있었다",
+              "그들은 사냥을 해야만 했다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "목적어 (수식어구 + 명사)",
+            "text": "a large amount of food.",
+            "meaning": "많은 양의 음식을",
+            "options": [
+              "적은 양의 음식을",
+              "많은 양의 음식을",
+              "신선한 물을",
+              "다른 동물들을"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "so ... that ~",
+            "meaning": "너무 ...해서 ~하다"
+          },
+          {
+            "phrase": "have to",
+            "meaning": "~해야 한다"
+          },
+          {
+            "phrase": "a large amount of",
+            "meaning": "많은 양의"
+          }
+        ],
+        "sentence": "The dinosaurs' bodies were so enormous that they always had to eat a large amount of food.",
+        "preposition": "of",
+        "translation": "공룡들의 몸집은 너무 거대해서 그들은 항상 많은 양의 음식을 먹어야만 했다.",
+        "verbMeaning": "이었다",
+        "wordGlosses": [
+          {
+            "word": "The",
+            "meaning": "그"
+          },
+          {
+            "word": "dinosaurs'",
+            "meaning": "공룡들의"
+          },
+          {
+            "word": "bodies",
+            "meaning": "몸집들"
+          },
+          {
+            "word": "were",
+            "meaning": "이었다"
+          },
+          {
+            "word": "so",
+            "meaning": "너무"
+          },
+          {
+            "word": "enormous",
+            "meaning": "거대한"
+          },
+          {
+            "word": "that",
+            "meaning": "그래서 ~하다"
+          },
+          {
+            "word": "they",
+            "meaning": "그들은"
+          },
+          {
+            "word": "always",
+            "meaning": "항상"
+          },
+          {
+            "word": "had",
+            "meaning": "해야 했다"
+          },
+          {
+            "word": "to",
+            "meaning": "~하는 것을"
+          },
+          {
+            "word": "eat",
+            "meaning": "먹다"
+          },
+          {
+            "word": "a",
+            "meaning": "하나의"
+          },
+          {
+            "word": "large",
+            "meaning": "많은"
+          },
+          {
+            "word": "amount",
+            "meaning": "양"
+          },
+          {
+            "word": "of",
+            "meaning": "~의"
+          },
+          {
+            "word": "food",
+            "meaning": "음식"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "so + 형용사/부사 + that + 주어 + 동사",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "공룡들의 몸집은 너무 거대해서 그들은 항상 많은 양의 음식을 먹어야만 했다.",
+          "공룡들의 몸집이 작았기 때문에 그들은 음식을 거의 먹을 필요가 없었다.",
+          "공룡들은 거대한 몸집을 유지하기 위해 항상 음식을 사냥해야 했다.",
+          "공룡들의 몸집은 너무 거대했지만 그들은 아주 적은 양의 음식만 먹었다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "이 구문은 '너무 ~해서 ...하다'라는 원인과 결과를 나타내는 표현입니다. 본문에서는 공룡들의 몸집이 너무 거대했다는 원인(so enormous) 때문에 항상 많은 양의 음식을 먹어야 했다는 결과(that they always had to eat...)가 발생했음을 설명합니다.",
+        "prepositionMeaning": "~의"
+      },
+      {
+        "verb": "were",
+        "verbs": [
+          "were"
+        ],
+        "chunks": [
+          {
+            "role": "Main clause",
+            "text": "But there were no longer any plants",
+            "meaning": "하지만 더 이상 어떤 식물도 없었다",
+            "options": [
+              "하지만 더 이상 어떤 식물도 없었다",
+              "하지만 그들은 식물을 더 많이 원했다",
+              "그러나 식물들은 더 오래 살지 못했다",
+              "하지만 그곳에는 식물이 가득했다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Infinitive clause modifying 'plants' with subject",
+            "text": "for them to eat",
+            "meaning": "그들이 먹을",
+            "options": [
+              "그들이 먹기 위해서",
+              "그들이 먹을",
+              "그들을 먹이기 위해",
+              "그들이 먹는 것 대신에"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "no longer",
+            "meaning": "더 이상 ~않다"
+          }
+        ],
+        "sentence": "But there were no longer any plants for them to eat.",
+        "preposition": "for",
+        "translation": "하지만 그들이 먹을 식물이 더 이상 없었다.",
+        "verbMeaning": "있었다",
+        "wordGlosses": [
+          {
+            "word": "But",
+            "meaning": "하지만"
+          },
+          {
+            "word": "there",
+            "meaning": "거기에"
+          },
+          {
+            "word": "were",
+            "meaning": "있었다"
+          },
+          {
+            "word": "no",
+            "meaning": "없는"
+          },
+          {
+            "word": "longer",
+            "meaning": "더 오래"
+          },
+          {
+            "word": "any",
+            "meaning": "어떤, 조금의"
+          },
+          {
+            "word": "plants",
+            "meaning": "식물들"
+          },
+          {
+            "word": "for",
+            "meaning": "~가 (의미상 주어)"
+          },
+          {
+            "word": "them",
+            "meaning": "그들"
+          },
+          {
+            "word": "to",
+            "meaning": "~할"
+          },
+          {
+            "word": "eat",
+            "meaning": "먹다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "there be + no longer + noun + for + object + to-infinitive",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "하지만 그들이 먹을 식물이 더 이상 없었다.",
+          "하지만 그들은 식물을 먹기 위해 더 오래 머물렀다.",
+          "그러나 그곳에는 식물이 더 많이 자라나고 있었다.",
+          "하지만 그들은 식물을 먹는 것을 더 이상 좋아하지 않았다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "'there be' 구문은 '~이 있다'라는 존재를 나타내며, 'no longer'는 '더 이상 ~않다'라는 부정의 의미를 더합니다. 'for them'은 to부정사 'to eat'의 의미상 주어로 쓰여 '그들이 먹을'이라는 형용사적 용법으로 앞의 명사 'plants'를 수식합니다.",
+        "prepositionMeaning": "~가 (의미상 주어)"
+      },
+      {
+        "verb": "could find",
+        "verbs": [
+          "grew",
+          "fed",
+          "could find"
+        ],
+        "chunks": [
+          {
+            "role": "adverbial clause of time",
+            "text": "When these dinosaurs grew hungry and thin,",
+            "meaning": "이 공룡들이 배고프고 마르게 되었을 때,",
+            "options": [
+              "이 공룡들이 배고프고 마르게 되었을 때,",
+              "이 공룡들이 배부르고 뚱뚱해졌을 때,",
+              "이 공룡들이 멸종되었을 때,",
+              "이 공룡들이 사냥을 시작했을 때,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "subject with relative clause",
+            "text": "the dinosaurs who fed on them, in turn,",
+            "meaning": "결과적으로 그것들을 먹고 살던 공룡들은,",
+            "options": [
+              "결과적으로 그것들을 먹고 살던 공룡들은,",
+              "그것들을 피해 도망치던 공룡들은,",
+              "그것들과 함께 살던 다른 동물들은,",
+              "그 지역에 살던 모든 초식 공룡들은,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "predicate",
+            "text": "could no longer find enough to eat.",
+            "meaning": "더 이상 먹을 것을 충분히 찾을 수 없었다.",
+            "options": [
+              "더 이상 먹을 것을 충분히 찾을 수 없었다.",
+              "쉽게 먹이를 찾을 수 있었다.",
+              "새로운 먹이를 찾아 떠나야 했다.",
+              "더 많은 먹이를 먹기 시작했다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "feed on",
+            "meaning": "~을 먹고 살다"
+          },
+          {
+            "phrase": "in turn",
+            "meaning": "결과적으로, 차례로"
+          },
+          {
+            "phrase": "no longer",
+            "meaning": "더 이상 ~않다"
+          }
+        ],
+        "sentence": "When these dinosaurs grew hungry and thin, the dinosaurs who fed on them, in turn, could no longer find enough to eat.",
+        "preposition": "on",
+        "translation": "이 공룡들이 배고프고 마르게 되자, 차례로 그것들을 먹고 살던 공룡들도 더 이상 먹을 것을 충분히 찾을 수 없었다.",
+        "verbMeaning": "찾을 수 있었다",
+        "wordGlosses": [
+          {
+            "word": "When",
+            "meaning": "~할 때"
+          },
+          {
+            "word": "these",
+            "meaning": "이"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "grew",
+            "meaning": "되었다"
+          },
+          {
+            "word": "hungry",
+            "meaning": "배고픈"
+          },
+          {
+            "word": "and",
+            "meaning": "그리고"
+          },
+          {
+            "word": "thin",
+            "meaning": "마른"
+          },
+          {
+            "word": "who",
+            "meaning": "그들은 (관계대명사)"
+          },
+          {
+            "word": "fed",
+            "meaning": "먹었다"
+          },
+          {
+            "word": "on",
+            "meaning": "~을"
+          },
+          {
+            "word": "them",
+            "meaning": "그것들을"
+          },
+          {
+            "word": "in turn",
+            "meaning": "결과적으로, 차례로"
+          },
+          {
+            "word": "could",
+            "meaning": "~할 수 있었다"
+          },
+          {
+            "word": "no longer",
+            "meaning": "더 이상 ~않다"
+          },
+          {
+            "word": "find",
+            "meaning": "찾다"
+          },
+          {
+            "word": "enough",
+            "meaning": "충분한 것"
+          },
+          {
+            "word": "to eat",
+            "meaning": "먹을"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "When + S + V, S + who + V ..., V ...",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "이 공룡들이 배고프고 마르게 되자, 차례로 그것들을 먹고 살던 공룡들도 더 이상 먹을 것을 충분히 찾을 수 없었다.",
+          "이 공룡들이 배가 부르고 뚱뚱해졌을 때, 그것들을 사냥하던 공룡들은 더 많은 먹이를 쉽게 찾을 수 있었다.",
+          "공룡들이 굶주리기 시작하자, 다른 동물들이 그들을 피해 숨을 곳을 찾기 시작했다.",
+          "이 공룡들이 사라지자, 그들을 먹고 살던 포식자들은 새로운 먹이를 찾아 떠났다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "When이 이끄는 부사절이 문두에 위치하며, 주절의 주어인 the dinosaurs는 주격 관계대명사 who가 이끄는 형용사절(who fed on them)의 수식을 받습니다. 주절의 동사는 could no longer find이며, to eat은 형용사적 용법으로 대명사 enough를 수식합니다.",
+        "prepositionMeaning": "~을 (먹고 살다)"
+      },
+      {
+        "verb": "grew",
+        "verbs": [
+          "grew"
+        ],
+        "chunks": [
+          {
+            "role": "Subject with modifier",
+            "text": "So they, too,",
+            "meaning": "그래서 그들 역시,",
+            "options": [
+              "그래서 그들 역시,",
+              "하지만 그들은,",
+              "그리하여 우리도,",
+              "결국 그들만이,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Predicate",
+            "text": "grew hungry and thin.",
+            "meaning": "배고프고 여위어 갔다.",
+            "options": [
+              "배고프고 여위어 갔다.",
+              "배부르고 건강해졌다.",
+              "슬프고 외로워졌다.",
+              "화가 나고 지쳐 갔다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "grow hungry",
+            "meaning": "배고파지다"
+          },
+          {
+            "phrase": "grow thin",
+            "meaning": "여위다, 마르다"
+          }
+        ],
+        "sentence": "So they, too, grew hungry and thin.",
+        "preposition": "",
+        "translation": "그래서 그들 역시 배고프고 여위어 갔다.",
+        "verbMeaning": "~해졌다",
+        "wordGlosses": [
+          {
+            "word": "So",
+            "meaning": "그래서"
+          },
+          {
+            "word": "they",
+            "meaning": "그들"
+          },
+          {
+            "word": "too",
+            "meaning": "또한, 역시"
+          },
+          {
+            "word": "grew",
+            "meaning": "~해졌다 (grow의 과거형)"
+          },
+          {
+            "word": "hungry",
+            "meaning": "배고픈"
+          },
+          {
+            "word": "and",
+            "meaning": "그리고"
+          },
+          {
+            "word": "thin",
+            "meaning": "여윈, 마른"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Subject + Linking Verb (grow) + Adjective Complement",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "그래서 그들 역시 배고프고 여위어 갔다.",
+          "하지만 그들은 배부르고 건강해졌다.",
+          "그래서 그들은 결국 음식을 찾아 떠났다.",
+          "그리하여 그들은 더 이상 굶지 않게 되었다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "동사 'grow'는 이형식 연결동사로 쓰여 '~한 상태가 되다'라는 변화를 나타내며, 보어로 형용사(hungry, thin)를 취합니다.",
+        "prepositionMeaning": ""
+      },
+      {
+        "verb": "might have been",
+        "verbs": [
+          "might have been"
+        ],
+        "chunks": [
+          {
+            "role": "Subject + Verb + Subject Complement",
+            "text": "The dinosaurs might have been too weak or too large or too stupid",
+            "meaning": "공룡들은 너무 약했거나, 너무 컸거나, 혹은 너무 어리석었을지도 모른다",
+            "options": [
+              "공룡들은 너무 약했거나, 너무 컸거나, 혹은 너무 어리석었을지도 모른다",
+              "공룡들은 먹이를 찾아 다른 곳으로 이동했다",
+              "공룡들은 너무 약해서 다른 곳으로 이동할 수 없었다",
+              "공룡들은 먹이를 찾기 위해 다른 곳으로 이동하는 것을 싫어했다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Adverbial modifier (Infinitive of degree)",
+            "text": "to move somewhere else",
+            "meaning": "다른 어딘가로 이동하기에는",
+            "options": [
+              "다른 어딘가로 이동하기에는",
+              "그들의 서식지를 지키기 위해",
+              "새로운 먹이를 발견하기 위해서",
+              "다른 공룡들과 함께 살기 위해"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Prepositional phrase (Purpose)",
+            "text": "in search of food",
+            "meaning": "먹이를 찾아서",
+            "options": [
+              "먹이를 찾아서",
+              "기후 변화 때문에",
+              "천적을 피해서",
+              "물을 마시기 위해"
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "might have p.p.",
+            "meaning": "~했을지도 모른다 (과거에 대한 약한 추측)"
+          },
+          {
+            "phrase": "too ... to ~",
+            "meaning": "너무 ...해서 ~할 수 없는"
+          },
+          {
+            "phrase": "somewhere else",
+            "meaning": "다른 어딘가로"
+          },
+          {
+            "phrase": "in search of",
+            "meaning": "~을 찾아서"
+          }
+        ],
+        "sentence": "The dinosaurs might have been too weak or too large or too stupid to move somewhere else in search of food.",
+        "preposition": "in",
+        "translation": "공룡들은 먹이를 찾아 다른 곳으로 이동하기에는 너무 약했거나, 너무 컸거나, 혹은 너무 어리석었을지도 모른다.",
+        "verbMeaning": "~였을지도 모른다",
+        "wordGlosses": [
+          {
+            "word": "The",
+            "meaning": "그"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "might",
+            "meaning": "~했을지도 모른다"
+          },
+          {
+            "word": "have",
+            "meaning": "가지다 (조동사 완료형)"
+          },
+          {
+            "word": "been",
+            "meaning": "이었다 (be동사의 과거분사)"
+          },
+          {
+            "word": "too",
+            "meaning": "너무"
+          },
+          {
+            "word": "weak",
+            "meaning": "약한"
+          },
+          {
+            "word": "or",
+            "meaning": "또는"
+          },
+          {
+            "word": "large",
+            "meaning": "큰"
+          },
+          {
+            "word": "stupid",
+            "meaning": "어리석은"
+          },
+          {
+            "word": "to",
+            "meaning": "~하기에"
+          },
+          {
+            "word": "move",
+            "meaning": "이동하다"
+          },
+          {
+            "word": "somewhere",
+            "meaning": "어딘가"
+          },
+          {
+            "word": "else",
+            "meaning": "다른"
+          },
+          {
+            "word": "in",
+            "meaning": "~에서"
+          },
+          {
+            "word": "search",
+            "meaning": "찾기, 수색"
+          },
+          {
+            "word": "of",
+            "meaning": "~의"
+          },
+          {
+            "word": "food",
+            "meaning": "먹이, 음식"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "might have p.p. / too ~ to-v",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "공룡들은 먹이를 찾아 다른 곳으로 이동하기에는 너무 약했거나, 너무 컸거나, 혹은 너무 어리석었을지도 모른다.",
+          "공룡들은 먹이를 찾기 위해 다른 곳으로 이동하는 것이 너무 약하거나 크거나 어리석다는 것을 알았다.",
+          "공룡들은 너무 약하고 크고 어리석어서 다른 곳에서 먹이를 찾을 수 없었을 것이다.",
+          "공룡들은 먹이가 부족해지자 다른 곳으로 이동하기에는 너무 약하거나 너무 거대해졌다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "조동사 'might have p.p.'는 과거 사실에 대한 불확실한 추측('~했을지도 모른다')을 나타냅니다. 'too + 형용사 + to-v' 구문은 '너무 ~해서 ...할 수 없다' 또는 '...하기에는 너무 ~하다'라는 부정적 의미를 나타냅니다.",
+        "prepositionMeaning": "~에서"
+      },
+      {
+        "verb": "were eaten",
+        "verbs": [
+          "were eaten"
+        ],
+        "chunks": [
+          {
+            "role": "Subject",
+            "text": "Many of the dinosaur eggs",
+            "meaning": "그 공룡 알들 중 많은 수가",
+            "options": [
+              "그 공룡 알들 중 많은 수가",
+              "다른 동물들이",
+              "공룡 알을 먹음으로써",
+              "많은 공룡들이"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Verb (Passive)",
+            "text": "were eaten",
+            "meaning": "먹혔다",
+            "options": [
+              "먹었다",
+              "먹혔다",
+              "낳았다",
+              "보호받았다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "Agent (Prepositional Phrase)",
+            "text": "by other animals",
+            "meaning": "다른 동물들에 의해",
+            "options": [
+              "다른 동물들을 위해",
+              "다른 동물들과 함께",
+              "다른 동물들에 의해",
+              "다른 동물들로부터"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "be eaten by",
+            "meaning": "~에게 먹히다"
+          }
+        ],
+        "sentence": "Many of the dinosaur eggs were eaten by other animals.",
+        "preposition": "by",
+        "translation": "그 공룡 알들 중 많은 수가 다른 동물들에 의해 먹혔다.",
+        "verbMeaning": "먹혔다",
+        "wordGlosses": [
+          {
+            "word": "Many",
+            "meaning": "많은 수"
+          },
+          {
+            "word": "of",
+            "meaning": "~ 중"
+          },
+          {
+            "word": "the",
+            "meaning": "그"
+          },
+          {
+            "word": "dinosaur",
+            "meaning": "공룡"
+          },
+          {
+            "word": "eggs",
+            "meaning": "알들"
+          },
+          {
+            "word": "were",
+            "meaning": "이었다"
+          },
+          {
+            "word": "eaten",
+            "meaning": "먹힌"
+          },
+          {
+            "word": "by",
+            "meaning": "~에 의해"
+          },
+          {
+            "word": "other",
+            "meaning": "다른"
+          },
+          {
+            "word": "animals",
+            "meaning": "동물들"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Passive Voice (be + past participle)",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "그 공룡 알들 중 많은 수가 다른 동물들에 의해 먹혔다.",
+          "많은 공룡 알들이 다른 동물들을 먹었다.",
+          "다른 동물들이 많은 공룡 알들을 낳았다.",
+          "공룡 알들 중 일부가 다른 동물들을 피했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "주어가 동작을 직접 수행하는 것이 아니라 동작의 대상이 될 때 'be동사 + 과거분사(p.p.)' 형태의 수동태를 사용합니다. 이 문장에서는 'were eaten'이 사용되어 공룡 알들이 '먹혔다'는 수동의 의미를 나타내며, 행위자는 'by other animals(다른 동물들에 의해)'로 표현되었습니다.",
+        "prepositionMeaning": "~에 의해"
+      },
+      {
+        "verb": "swept",
+        "verbs": [
+          "swept"
+        ],
+        "chunks": [
+          {
+            "role": "주절",
+            "text": "Perhaps a disease swept across the land",
+            "meaning": "어쩌면 질병이 온 땅을 휩쓸었을지도 모른다",
+            "options": [
+              "어쩌면 질병이 온 땅을 휩쓸었을지도 모른다",
+              "질병이 땅에서 사라졌을지도 모른다",
+              "공룡들이 땅을 휩쓸었을지도 모른다",
+              "어쩌면 질병이 땅을 치료했을지도 모른다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "분사구문",
+            "text": ", killing thousands and thousands of dinosaurs",
+            "meaning": "그 결과 수천 수만 마리의 공룡들을 죽였다",
+            "options": [
+              "수천 마리의 공룡들을 살려두면서",
+              "그 결과 수천 수만 마리의 공룡들을 죽였다",
+              "공룡들이 수천 마리씩 태어나면서",
+              "수천 마리의 공룡들을 사냥하면서"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "sweep across",
+            "meaning": "휩쓸고 지나가다"
+          },
+          {
+            "phrase": "thousands and thousands of",
+            "meaning": "수천 수만의, 수많은"
+          }
+        ],
+        "sentence": "Perhaps a disease swept across the land, killing thousands and thousands of dinosaurs.",
+        "preposition": "across",
+        "translation": "어쩌면 질병이 온 땅을 휩쓸어, 수천 수만 마리의 공룡들을 죽였을지도 모른다.",
+        "verbMeaning": "휩쓸었다",
+        "wordGlosses": [
+          {
+            "word": "Perhaps",
+            "meaning": "어쩌면, 아마도"
+          },
+          {
+            "word": "disease",
+            "meaning": "질병"
+          },
+          {
+            "word": "swept",
+            "meaning": "휩쓸었다 (sweep의 과거형)"
+          },
+          {
+            "word": "across",
+            "meaning": "~ 전역에, ~을 가로질러"
+          },
+          {
+            "word": "land",
+            "meaning": "땅, 육지"
+          },
+          {
+            "word": "killing",
+            "meaning": "죽이면서"
+          },
+          {
+            "word": "thousands",
+            "meaning": "수천"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Participle Clause (분사구문)",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "어쩌면 질병이 온 땅을 휩쓸어, 수천 수만 마리의 공룡들을 죽였을지도 모른다.",
+          "아마도 질병이 땅을 가로질러 퍼졌지만, 공룡들은 수천 마리만 살아남았다.",
+          "질병이 땅을 휩쓸기 전에, 수천 마리의 공룡들이 이미 죽어 있었다.",
+          "어쩌면 질병이 땅을 휩쓸었을 때, 공룡들은 수천 마리씩 이동했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "콤마(,) 뒤에 이어지는 '-ing' 형태인 'killing'은 현재분사구문으로, 앞선 주절의 행동에 대한 결과나 부수적인 상황을 나타냅니다. 여기서는 질병이 땅을 휩쓴 결과로 수많은 공룡들이 죽게 되었음을 의미합니다.",
+        "prepositionMeaning": "~ 전역에"
+      },
+      {
+        "verb": "do know",
+        "verbs": [
+          "do know",
+          "began",
+          "appeared"
+        ],
+        "chunks": [
+          {
+            "role": "Main clause with emphatic verb and conjunction",
+            "text": "But we do know that",
+            "meaning": "하지만 우리는 ~라는 것을 정말로 알고 있다",
+            "options": [
+              "하지만 우리는 ~라는 것을 정말로 알고 있다",
+              "그리고 우리는 ~라고 생각한다",
+              "하지만 우리는 ~인지 모른다",
+              "그래서 우리는 ~를 발견했다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Adverbial clause of time",
+            "text": "when the giant creatures began to disappear,",
+            "meaning": "그 거대한 생물들이 사라지기 시작했을 때,",
+            "options": [
+              "그 거대한 생물들이 사라지기 시작했을 때,",
+              "그 거대한 생물들이 나타나기 시작했을 때,",
+              "다른 동물들이 사라지기 시작했을 때,",
+              "그 거대한 생물들이 사라진 후에,"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Subject and verb of the noun clause",
+            "text": "other animals appeared.",
+            "meaning": "다른 동물들이 나타났다.",
+            "options": [
+              "다른 동물들이 나타났다.",
+              "다른 동물들이 사라졌다.",
+              "거대한 생물들이 나타났다.",
+              "동물들이 멸종했다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "do know",
+            "meaning": "정말로 알고 있다 (강조)"
+          },
+          {
+            "phrase": "begin to",
+            "meaning": "~하기 시작하다"
+          }
+        ],
+        "sentence": "But we do know that when the giant creatures began to disappear, other animals appeared.",
+        "preposition": "",
+        "translation": "하지만 우리는 그 거대한 생물들이 사라지기 시작했을 때 다른 동물들이 나타났다는 것을 정말로 알고 있다.",
+        "verbMeaning": "정말로 알고 있다",
+        "wordGlosses": [
+          {
+            "word": "But",
+            "meaning": "하지만"
+          },
+          {
+            "word": "we",
+            "meaning": "우리는"
+          },
+          {
+            "word": "do",
+            "meaning": "정말로 (강조)"
+          },
+          {
+            "word": "know",
+            "meaning": "알다"
+          },
+          {
+            "word": "that",
+            "meaning": "~라는 것을 (접속사)"
+          },
+          {
+            "word": "when",
+            "meaning": "~할 때"
+          },
+          {
+            "word": "the",
+            "meaning": "그"
+          },
+          {
+            "word": "giant",
+            "meaning": "거대한"
+          },
+          {
+            "word": "creatures",
+            "meaning": "생물들"
+          },
+          {
+            "word": "began",
+            "meaning": "시작했다"
+          },
+          {
+            "word": "to",
+            "meaning": "~하는 것을"
+          },
+          {
+            "word": "disappear",
+            "meaning": "사라지다"
+          },
+          {
+            "word": "other",
+            "meaning": "다른"
+          },
+          {
+            "word": "animals",
+            "meaning": "동물들"
+          },
+          {
+            "word": "appeared",
+            "meaning": "나타났다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Emphatic 'do' and Noun Clause with 'that'",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "하지만 우리는 그 거대한 생물들이 사라지기 시작했을 때 다른 동물들이 나타났다는 것을 정말로 알고 있다.",
+          "하지만 우리는 그 거대한 생물들이 나타나기 시작했을 때 다른 동물들이 사라졌다는 것을 알고 있다.",
+          "그리고 우리는 그 거대한 생물들이 사라지기 전에 다른 동물들이 나타났다는 것을 알고 있다.",
+          "하지만 우리는 그 거대한 생물들이 사라졌기 때문에 다른 동물들이 나타나지 않았음을 알고 있다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "일반동사 know 앞에 조동사 do를 써서 '정말로 알고 있다'라는 강조의 의미를 나타냅니다. 접속사 that 뒤에는 명사절이 이어지며, 그 명사절 내부에 시간의 부사절(when...)이 삽입되어 있습니다.",
+        "prepositionMeaning": ""
+      },
+      {
+        "verb": "were",
+        "verbs": [
+          "were"
+        ],
+        "chunks": [
+          {
+            "role": "Subject",
+            "text": "These animals",
+            "meaning": "이 동물들은",
+            "options": [
+              "이 동물들은",
+              "그 공룡들은",
+              "이 식물들은",
+              "그 곤충들은"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Verb & Subject Complement",
+            "text": "were smaller and more active",
+            "meaning": "더 작고 더 활동적이었다",
+            "options": [
+              "더 크고 더 느렸다",
+              "더 작고 더 활동적이었다",
+              "더 무겁고 더 조용했다",
+              "더 빠르고 더 사나웠다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "Adverbial Phrase (Comparison)",
+            "text": "than most of the dinosaurs",
+            "meaning": "대부분의 공룡들보다",
+            "options": [
+              "대부분의 공룡들처럼",
+              "대부분의 공룡들보다",
+              "일부 공룡들보다",
+              "모든 공룡들만큼"
+            ],
+            "correctIndex": 1
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "more active than",
+            "meaning": "~보다 더 활동적인"
+          },
+          {
+            "phrase": "most of",
+            "meaning": "~의 대부분"
+          }
+        ],
+        "sentence": "These animals were smaller and more active than most of the dinosaurs.",
+        "preposition": "of",
+        "translation": "이 동물들은 대부분의 공룡들보다 더 작고 더 활동적이었다.",
+        "verbMeaning": "이었다",
+        "wordGlosses": [
+          {
+            "word": "These",
+            "meaning": "이"
+          },
+          {
+            "word": "animals",
+            "meaning": "동물들"
+          },
+          {
+            "word": "were",
+            "meaning": "이었다"
+          },
+          {
+            "word": "smaller",
+            "meaning": "더 작은"
+          },
+          {
+            "word": "and",
+            "meaning": "그리고"
+          },
+          {
+            "word": "more",
+            "meaning": "더"
+          },
+          {
+            "word": "active",
+            "meaning": "활동적인"
+          },
+          {
+            "word": "than",
+            "meaning": "~보다"
+          },
+          {
+            "word": "most",
+            "meaning": "대부분"
+          },
+          {
+            "word": "of",
+            "meaning": "~의"
+          },
+          {
+            "word": "the",
+            "meaning": "그"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Comparative Adjectives with 'than'",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "이 동물들은 대부분의 공룡들보다 더 작고 더 활동적이었다.",
+          "이 동물들은 대부분의 공룡들만큼 크고 활동적이었다.",
+          "이 동물들은 대부분의 공룡들보다 더 크고 덜 활동적이었다.",
+          "이 동물들은 대부분의 공룡들처럼 작고 조용했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "형용사의 비교급(smaller, more active) 뒤에 'than'을 사용하여 두 대상을 비교하는 구조입니다. 'smaller'는 단음절 형용사 'small'에 '-er'를 붙인 비교급이고, 'more active'는 다음절 형용사 'active' 앞에 'more'를 붙인 비교급입니다.",
+        "prepositionMeaning": "~의"
+      },
+      {
+        "verb": "could scurry",
+        "verbs": [
+          "could scurry",
+          "find"
+        ],
+        "chunks": [
+          {
+            "role": "주어 + 조동사 + 동사구",
+            "text": "They could scurry around",
+            "meaning": "그들은 바쁘게 돌아다닐 수 있었다",
+            "options": [
+              "그들은 바쁘게 돌아다닐 수 있었다",
+              "그들은 음식을 먹을 수 있었다",
+              "그들은 음식을 찾기 시작했다",
+              "그들은 바쁘게 일해야 했다"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "등위접속사 + 동사 + 목적어",
+            "text": "and find enough food",
+            "meaning": "그리고 충분한 음식을 찾을 수 있었다",
+            "options": [
+              "그리고 음식을 나누어 주었다",
+              "그리고 충분한 음식을 찾을 수 있었다",
+              "그리고 음식을 먹기 시작했다",
+              "그리고 음식을 요리했다"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "role": "명사를 수식하는 to부정사",
+            "text": "to eat",
+            "meaning": "먹을",
+            "options": [
+              "먹기 위해서",
+              "먹는 것",
+              "먹을",
+              "먹었기 때문에"
+            ],
+            "correctIndex": 2
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "scurry around",
+            "meaning": "바쁘게 돌아다니다"
+          }
+        ],
+        "sentence": "They could scurry around and find enough food to eat.",
+        "preposition": "around",
+        "translation": "그들은 바쁘게 돌아다니며 먹을 충분한 음식을 찾을 수 있었다.",
+        "verbMeaning": "바쁘게 돌아다니다, 찾다",
+        "wordGlosses": [
+          {
+            "word": "They",
+            "meaning": "그들"
+          },
+          {
+            "word": "could",
+            "meaning": "~할 수 있었다"
+          },
+          {
+            "word": "scurry",
+            "meaning": "바쁘게 가다"
+          },
+          {
+            "word": "around",
+            "meaning": "이리저리"
+          },
+          {
+            "word": "and",
+            "meaning": "그리고"
+          },
+          {
+            "word": "find",
+            "meaning": "찾다"
+          },
+          {
+            "word": "enough",
+            "meaning": "충분한"
+          },
+          {
+            "word": "food",
+            "meaning": "음식"
+          },
+          {
+            "word": "to",
+            "meaning": "~할"
+          },
+          {
+            "word": "eat",
+            "meaning": "먹다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "could + 동사원형 병렬 구조 & to부정사의 형용사적 용법",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "그들은 바쁘게 돌아다니며 먹을 충분한 음식을 찾을 수 있었다.",
+          "그들은 음식을 먹기 위해 바쁘게 돌아다니는 것을 멈추었다.",
+          "그들은 충분한 음식을 찾았지만 먹을 수 없었다.",
+          "그들은 바쁘게 돌아다녔으나 음식을 찾지 못했다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "조동사 could에 걸리는 두 개의 동사원형 scurry와 find가 등위접속사 and로 연결되어 병렬 구조를 이룹니다. 또한 to eat은 앞의 명사 food를 수식하는 형용사적 용법의 to부정사로 쓰였습니다.",
+        "prepositionMeaning": "이리저리"
+      },
+      {
+        "verb": "are left",
+        "verbs": [
+          "are left"
+        ],
+        "chunks": [
+          {
+            "role": "Subject with adverb",
+            "text": "Today only the bones",
+            "meaning": "오늘날에는 오직 뼈들만",
+            "options": [
+              "오늘날에는 오직 뼈들만",
+              "오늘날에는 모든 뼈들이",
+              "오늘날에는 뼈가 없이",
+              "오늘날에는 뼈들 대신"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Prepositional phrase modifying bones",
+            "text": "of some of the dinosaurs",
+            "meaning": "그 공룡들 중 일부의",
+            "options": [
+              "그 공룡들 중 일부의",
+              "대부분의 공룡들의",
+              "공룡들이 살았던",
+              "공룡들의 뼈와 함께"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "role": "Verb phrase",
+            "text": "are left.",
+            "meaning": "남아 있다.",
+            "options": [
+              "남아 있다.",
+              "사라졌다.",
+              "발견되었다.",
+              "움직인다."
+            ],
+            "correctIndex": 0
+          }
+        ],
+        "idioms": [
+          {
+            "phrase": "be left",
+            "meaning": "남아 있다"
+          }
+        ],
+        "sentence": "Today only the bones of some of the dinosaurs are left.",
+        "preposition": "of",
+        "translation": "오늘날에는 그 공룡들 중 일부의 뼈들만 남아 있다.",
+        "verbMeaning": "남아 있다",
+        "wordGlosses": [
+          {
+            "word": "Today",
+            "meaning": "오늘날"
+          },
+          {
+            "word": "only",
+            "meaning": "오직, ~만"
+          },
+          {
+            "word": "bones",
+            "meaning": "뼈들"
+          },
+          {
+            "word": "of",
+            "meaning": "~의"
+          },
+          {
+            "word": "some",
+            "meaning": "일부, 몇몇"
+          },
+          {
+            "word": "dinosaurs",
+            "meaning": "공룡들"
+          },
+          {
+            "word": "are left",
+            "meaning": "남아 있다"
+          }
+        ],
+        "grammarGlosses": [],
+        "grammarPattern": "Passive Voice (be + past participle)",
+        "sentenceCorrect": 0,
+        "sentenceOptions": [
+          "오늘날에는 그 공룡들 중 일부의 뼈들만 남아 있다.",
+          "오늘날에는 오직 몇몇 공룡들의 뼈만이 발견된다.",
+          "오늘날에는 공룡들의 뼈가 모두 사라졌다.",
+          "오늘날에는 오직 공룡의 뼈만이 살아있다."
+        ],
+        "geminiStudyVersion": 2,
+        "grammarExplanation": "'are left'는 동사 leave(남겨두다)의 수동태 형태로, 주어인 'the bones'가 남겨진 상태, 즉 '남아 있다'라는 의미를 나타냅니다.",
+        "prepositionMeaning": "~의"
+      }
+    ]
   }
 ]

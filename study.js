@@ -45,6 +45,8 @@
     accuracy: $("#accuracy-label"),
     feedback: $("#live-feedback"),
     sound: $("#sound-toggle"),
+    vocabList: $("#vocab-list"),
+    bigNext: $("#big-next-button"),
     savedBooksPanel: $("#saved-books-panel"),
     savedBookList: $("#saved-book-list"),
     resultSource: $("#result-source"),
@@ -105,6 +107,12 @@
       showToast(state.sound ? "문장 읽기 소리를 켰어요." : "문장 읽기 소리를 껐어요.");
     });
     ui.pages.addEventListener("click", handleBoardClick);
+    ui.bigNext.addEventListener("click", () => {
+      if (!state.session) return;
+      playEffect("tap");
+      if (state.session.phase === "halves") { advanceReadingChunk(); return; }
+      if (state.session.phase === "complete") advanceToNextSentence();
+    });
     window.addEventListener("resize", () => requestAnimationFrame(alignQuizToActiveChunk));
     renderSavedBooks();
     syncBundledBooks().then(upgradeStoredBooksWithGemini);
@@ -383,6 +391,7 @@
             saveWordGlossToBook(stage.sentence, word, meaning);
           });
         });
+        renderVocabPanel();
       }
     } catch (_) { /* 미리 받아두기는 실패해도 클릭 시 개별 조회로 동작한다 */ }
   }
@@ -498,7 +507,44 @@
     speakSentence(part && part.text ? part.text : stage.sentence);
   }
 
+  const EASY_WORDS = new Set(("a an the this that these those i you he she it we they me him her us them my your his its our " +
+    "their and but or so because if when while who what where why how not no yes very more most some any all each every " +
+    "one two three first also just too then than there here now am is are was were be been being do does did have has had " +
+    "will would can could may might must should shall of in on at to for with by from as about into over under up down " +
+    "out off get got go goes went come came see saw look make made take took give gave say said tell told good bad big " +
+    "small new old day time way thing boy girl man men woman it's don't isn't i'm he's she's they're we're you're").split(" "));
+
+  function renderVocabPanel() {
+    if (!ui.vocabList) return;
+    const stage = state.session ? state.stages[state.currentIndex] : null;
+    if (!stage) { ui.vocabList.innerHTML = ""; return; }
+    const items = [];
+    const seen = new Set();
+    (Array.isArray(stage.idioms) ? stage.idioms : []).forEach((idiom) => {
+      const phrase = String((idiom && idiom.phrase) || "").trim();
+      const meaning = String((idiom && idiom.meaning) || "").trim();
+      if (!phrase || !meaning || seen.has(phrase.toLowerCase())) return;
+      seen.add(phrase.toLowerCase());
+      items.push({ kind: "숙어", term: phrase, meaning });
+    });
+    const sentenceTokens = new Set(tokenize(stage.sentence).map((token) => token.toLowerCase()));
+    (Array.isArray(stage.wordGlosses) ? stage.wordGlosses : []).forEach((entry) => {
+      const word = String((entry && entry.word) || "").trim();
+      const meaning = String((entry && entry.meaning) || "").trim();
+      const lower = word.toLowerCase();
+      if (!word || !meaning || seen.has(lower)) return;
+      if (!sentenceTokens.has(lower)) return;
+      if (EASY_WORDS.has(lower) || lower.length <= 2) return;
+      seen.add(lower);
+      items.push({ kind: "단어", term: word, meaning });
+    });
+    ui.vocabList.innerHTML = items.slice(0, 12).map((entry) =>
+      `<li class="${entry.kind === "숙어" ? "is-idiom" : ""}"><i>${entry.kind}</i><b>${escapeHtml(entry.term)}</b><span>${escapeHtml(entry.meaning)}</span></li>`
+    ).join("") || `<li class="vocab-empty">이 문장에는 따로 익힐 단어가 없어요.</li>`;
+  }
+
   function renderPages() {
+    renderVocabPanel();
     const cards = state.stages.map((_, index) => renderSentenceCard(index));
     ui.pages.innerHTML = `<section class="sentence-page" aria-label="현재 문장 중심 학습 목록">${cards.join("")}</section>`;
     ui.pages.style.transform = "none";
@@ -685,7 +731,7 @@
 
   function renderQuiz(stage) {
     const phase = state.session.phase;
-    if (phase === "halves") return `<button class="chunk-next-button" type="button" data-next-chunk="true">다음 <span>→</span></button>`;
+    if (phase === "halves") return "";
     if (phase === "complete") {
       const isLastSentence = state.currentIndex >= state.stages.length - 1;
       return `<div class="sentence-final">
@@ -866,6 +912,7 @@
       localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books));
       if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));
     } catch (_) { /* local storage may be unavailable */ }
+    scheduleCloudPush();
   }
 
   function advanceReadingChunk() {

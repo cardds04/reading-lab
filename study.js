@@ -109,6 +109,23 @@
     });
     ui.pages.addEventListener("click", handleBoardClick);
     ui.bigNext.addEventListener("click", () => {
+      if (state.mode === "paragraph") {
+        if (!state.paragraphs) return;
+        playEffect("tap");
+        if (state.paraPhase === "reading") {
+          state.paraPhase = "summary";
+          stopSpeech();
+          renderParagraphs();
+        } else if (state.paraIndex >= state.paragraphs.length - 1) {
+          finishStudy();
+        } else {
+          state.paraIndex += 1;
+          state.paraPhase = "reading";
+          renderParagraphs();
+          speakCurrentParagraph();
+        }
+        return;
+      }
       if (!state.session) return;
       playEffect("tap");
       if (state.session.phase === "halves") { advanceReadingChunk(); return; }
@@ -347,10 +364,188 @@
     ui.srLevel.textContent = `SR ${state.srLevel}`;
     ui.chapterLabel.textContent = "CHAPTER 1";
     ui.elapsed.textContent = "00:00";
+    state.mode = "paragraph";
     updateStats();
-    activateSentence(0);
+    initParagraphs();
     state.timer = setInterval(updateTimer, 1000);
     prefetchWordGlosses();
+  }
+
+  function findCurrentBook() {
+    const title = String(state.sourceTitle || "").trim().toLowerCase();
+    return getStoredBooks().find((book) => String(book.title || "").trim().toLowerCase() === title) || null;
+  }
+
+  function fallbackParagraphs() {
+    const paragraphs = [];
+    for (let start = 0; start < state.stages.length; start += 4) {
+      paragraphs.push({ start, end: Math.min(start + 3, state.stages.length - 1), summary: "" });
+    }
+    return paragraphs;
+  }
+
+  function normalizeParagraphs(raw) {
+    const total = state.stages.length;
+    const cleaned = (Array.isArray(raw) ? raw : [])
+      .map((item) => ({
+        start: Number(item.start != null ? item.start : item.startIndex),
+        end: Number(item.end != null ? item.end : item.endIndex),
+        summary: String(item.summary || "").trim()
+      }))
+      .filter((item) => Number.isFinite(item.start) && Number.isFinite(item.end) && item.start <= item.end)
+      .sort((a, b) => a.start - b.start);
+    if (!cleaned.length) return [];
+    // 빠짐·겹침 없이 전체 문장을 덮도록 보정
+    let expected = 0;
+    const paragraphs = [];
+    cleaned.forEach((item) => {
+      if (expected >= total) return;
+      const start = expected;
+      const end = Math.max(start, Math.min(total - 1, item.end));
+      paragraphs.push({ start, end, summary: item.summary });
+      expected = end + 1;
+    });
+    if (expected <= total - 1 && paragraphs.length) paragraphs[paragraphs.length - 1].end = total - 1;
+    return paragraphs;
+  }
+
+  function initParagraphs() {
+    state.paraIndex = 0;
+    state.paraPhase = "reading";
+    const book = findCurrentBook();
+    const saved = book && Array.isArray(book.paragraphs) ? normalizeParagraphs(book.paragraphs) : [];
+    state.paragraphs = saved.length ? saved : fallbackParagraphs();
+    renderParagraphs();
+    speakCurrentParagraph();
+    if (!saved.length) refreshParagraphsFromGemini(book);
+  }
+
+  async function refreshParagraphsFromGemini(book) {
+    const apiKey = window.getGeminiKey();
+    if (!apiKey) return;
+    const stages = state.stages;
+    try {
+      const result = await window.geminiAnalyze({ mode: "paragraphs", apiKey, sentences: stages.map((stage) => stage.sentence) });
+      if (state.stages !== stages) return;
+      const paragraphs = normalizeParagraphs(result && result.paragraphs);
+      if (!paragraphs.length) return;
+      if (book) {
+        try {
+          const books = getStoredBooks();
+          const match = books.find((item) => String(item.title || "").trim().toLowerCase() === String(book.title || "").trim().toLowerCase());
+          if (match) {
+            match.paragraphs = paragraphs;
+            localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books));
+            scheduleCloudPush();
+          }
+        } catch (_) { /* local storage may be unavailable */ }
+      }
+      // 아직 첫 문단을 읽는 중일 때만 화면을 새 문단 구성으로 바꾼다
+      if (state.mode === "paragraph" && state.paraIndex === 0 && state.paraPhase === "reading") {
+        state.paragraphs = paragraphs;
+        renderParagraphs();
+      }
+    } catch (_) { /* 문단 나누기는 실패해도 4문장 묶음으로 계속 */ }
+  }
+
+  function currentParagraph() {
+    return (state.paragraphs && state.paragraphs[state.paraIndex]) || null;
+  }
+
+  function paragraphSummaryText(para) {
+    if (para.summary) return para.summary;
+    return state.stages.slice(para.start, para.end + 1)
+      .map((stage) => String(stage.translation || "").trim()).filter(Boolean).join(" ");
+  }
+
+  function renderParagraphSentence(stage, stageIndex, isActive) {
+    const glossMap = new Map();
+    if (isActive) {
+      (Array.isArray(stage.wordGlosses) ? stage.wordGlosses : []).forEach((item) => {
+        const lower = String(item.word || "").toLowerCase();
+        const meaning = String(item.meaning || "").trim();
+        if (!lower || !meaning || EASY_WORDS.has(lower) || lower.length <= 2) return;
+        if (!glossMap.has(lower)) glossMap.set(lower, meaning);
+      });
+    }
+    return tokenize(stage.sentence).map((token) => {
+      if (!/[A-Za-z]/.test(token)) return `<span class="para-token is-punct">${escapeHtml(token)}</span>`;
+      if (!isActive) return `<span class="para-token">${escapeHtml(token)}</span>`;
+      const gloss = glossMap.get(token.toLowerCase());
+      return `<button type="button" class="para-token is-word${gloss ? " has-gloss" : ""}" data-word="${escapeHtml(token)}" data-si="${stageIndex}">${escapeHtml(token)}${gloss ? `<small>${escapeHtml(gloss)}</small>` : ""}</button>`;
+    }).join(" ");
+  }
+
+  function renderParagraphs() {
+    renderVocabPanel();
+    if (!state.paragraphs) return;
+    const cards = state.paragraphs.map((para, pIndex) => {
+      const isActive = pIndex === state.paraIndex;
+      const cls = isActive ? "is-active" : pIndex < state.paraIndex ? "is-done" : "is-queued";
+      const text = state.stages.slice(para.start, para.end + 1)
+        .map((stage, offset) => renderParagraphSentence(stage, para.start + offset, isActive)).join(" ");
+      const showSummary = pIndex < state.paraIndex || (isActive && state.paraPhase === "summary");
+      const summary = showSummary ? paragraphSummaryText(para) : "";
+      return `<article class="para-card ${cls}" data-para-index="${pIndex}">
+        <div class="para-label"><span>PARAGRAPH ${String(pIndex + 1).padStart(2, "0")}</span></div>
+        <p class="para-text">${text}</p>
+        ${summary ? `<div class="para-summary"><span>이 문단의 내용</span><p>${escapeHtml(summary)}</p></div>` : ""}
+      </article>`;
+    }).join("");
+    ui.pages.innerHTML = `<section class="para-list" aria-label="문단 학습 목록">${cards}</section>`;
+    ui.pages.style.transform = "none";
+    ui.pageLabel.textContent = `PARAGRAPH ${String(state.paraIndex + 1).padStart(2, "0")} · ${state.paragraphs.length}`;
+    const total = state.paragraphs.length;
+    const done = state.paraIndex + (state.paraPhase === "summary" ? 1 : 0);
+    ui.progressCount.textContent = `${Math.min(done, total)} / ${total}`;
+    ui.progressBar.style.width = `${(Math.min(done, total) / total) * 100}%`;
+    ui.currentNumber.textContent = String(state.paraIndex + 1).padStart(2, "0");
+    const dotCount = Math.min(7, total);
+    const dotStart = Math.max(0, Math.min(state.paraIndex - 3, total - dotCount));
+    ui.pageDots.innerHTML = state.paragraphs.slice(dotStart, dotStart + dotCount).map((_, offset) => {
+      const index = dotStart + offset;
+      return `<i class="${index === state.paraIndex ? "is-current" : index < state.paraIndex ? "is-done" : ""}"></i>`;
+    }).join("");
+    const active = ui.pages.querySelector(".para-card.is-active");
+    if (active) requestAnimationFrame(() => active.scrollIntoView({ block: "start", behavior: "smooth" }));
+  }
+
+  function speakCurrentParagraph() {
+    const para = currentParagraph();
+    if (!para) return;
+    speakSentence(state.stages.slice(para.start, para.end + 1).map((stage) => stage.sentence).join(" "));
+  }
+
+  async function showParagraphWordMeaning(button) {
+    if (button.classList.contains("has-gloss") || button.classList.contains("is-loading")) return;
+    const word = button.dataset.word || "";
+    const stage = state.stages[Number(button.dataset.si)];
+    if (!word || !stage) return;
+    const lower = word.toLowerCase();
+    const glossary = (Array.isArray(stage.wordGlosses) ? stage.wordGlosses : [])
+      .find((item) => String(item.word || "").toLowerCase() === lower);
+    const localMeaning = window.HomeworkBuilder && typeof window.HomeworkBuilder.vocabularyMeaning === "function"
+      ? window.HomeworkBuilder.vocabularyMeaning(lower) : "";
+    let meaning = String((glossary && glossary.meaning) || localMeaning || "").trim();
+    if (!meaning) {
+      button.classList.add("is-loading");
+      button.insertAdjacentHTML("beforeend", "<small>…</small>");
+      try {
+        const result = await window.geminiAnalyze({ mode: "word", apiKey: window.getGeminiKey(), word, sentence: stage.sentence });
+        meaning = String((result && result.meaning) || "").trim();
+      } catch (_) { meaning = ""; }
+      button.classList.remove("is-loading");
+      const loading = button.querySelector("small");
+      if (loading) loading.remove();
+      if (meaning) {
+        if (!Array.isArray(stage.wordGlosses)) stage.wordGlosses = [];
+        stage.wordGlosses.push({ word, meaning });
+        saveWordGlossToBook(stage.sentence, word, meaning);
+      }
+    }
+    if (!meaning) { showToast("뜻을 찾지 못했어요. 다시 눌러보세요."); return; }
+    button.classList.add("has-gloss");
+    if (!button.querySelector("small")) button.insertAdjacentHTML("beforeend", `<small>${escapeHtml(meaning)}</small>`);
   }
 
   async function prefetchWordGlosses() {
@@ -392,7 +587,8 @@
             saveWordGlossToBook(stage.sentence, word, meaning);
           });
         });
-        renderVocabPanel();
+        if (state.mode === "paragraph") renderParagraphs();
+        else renderVocabPanel();
       }
     } catch (_) { /* 미리 받아두기는 실패해도 클릭 시 개별 조회로 동작한다 */ }
   }
@@ -501,6 +697,7 @@
   }
 
   function speakActiveChunk() {
+    if (state.mode === "paragraph") { speakCurrentParagraph(); return; }
     if (!state.session) return;
     const stage = state.stages[state.currentIndex];
     if (!stage) return;
@@ -517,10 +714,17 @@
 
   function renderVocabPanel() {
     if (!ui.vocabList) return;
-    const stage = state.session ? state.stages[state.currentIndex] : null;
-    if (!stage) { ui.vocabList.innerHTML = ""; return; }
+    let scopeStages = [];
+    if (state.mode === "paragraph") {
+      const para = currentParagraph();
+      if (para) scopeStages = state.stages.slice(para.start, para.end + 1);
+    } else if (state.session) {
+      scopeStages = [state.stages[state.currentIndex]];
+    }
+    if (!scopeStages.length) { ui.vocabList.innerHTML = ""; return; }
     const items = [];
     const seen = new Set();
+    scopeStages.forEach((stage) => {
     (Array.isArray(stage.idioms) ? stage.idioms : []).forEach((idiom) => {
       const phrase = String((idiom && idiom.phrase) || "").trim();
       const meaning = String((idiom && idiom.meaning) || "").trim();
@@ -539,7 +743,8 @@
       seen.add(lower);
       items.push({ kind: "단어", term: word, meaning });
     });
-    ui.vocabList.innerHTML = items.slice(0, 12).map((entry) =>
+    });
+    ui.vocabList.innerHTML = items.slice(0, 20).map((entry) =>
       `<li class="${entry.kind === "숙어" ? "is-idiom" : ""}"><i>${entry.kind}</i><b>${escapeHtml(entry.term)}</b><span>${escapeHtml(entry.meaning)}</span></li>`
     ).join("") || `<li class="vocab-empty">이 문장에는 따로 익힐 단어가 없어요.</li>`;
   }
@@ -835,6 +1040,11 @@
   }
 
   function handleBoardClick(event) {
+    if (state.mode === "paragraph") {
+      const wordButton = event.target.closest(".para-token.is-word");
+      if (wordButton && wordButton.closest(".para-card.is-active")) showParagraphWordMeaning(wordButton);
+      return;
+    }
     if (!state.session) return;
     const replay = event.target.closest("[data-replay-sentence]");
     if (replay) {

@@ -68,6 +68,10 @@
       schema = wordSchema;
     } else if (mode === "sentence") {
       prompt += ` Analyze exactly this supplied sentence and return exactly one item: ${payload.sentence}`;
+    } else if (mode === "paragraphs") {
+      const numbered = (payload.sentences || []).map((sentence, index) => `${index}. ${sentence}`).join("\n");
+      prompt = `Below is a children's reading passage, one sentence per line, numbered from 0 in reading order.\n${numbered}\nGroup consecutive sentences into natural paragraphs of about 2-5 sentences. Keep the original order and cover every sentence exactly once with no overlaps. For each paragraph return startIndex and endIndex (inclusive, 0-based) and a friendly one- or two-sentence Korean summary of what happens in that paragraph, written for a young learner.`;
+      schema = { type: "OBJECT", properties: { paragraphs: { type: "ARRAY", items: { type: "OBJECT", properties: { startIndex: { type: "INTEGER" }, endIndex: { type: "INTEGER" }, summary: { type: "STRING" } }, required: ["startIndex", "endIndex", "summary"] } } }, required: ["paragraphs"] };
     } else if (mode === "words") {
       prompt = `Passage: ${payload.passage}\nTarget words: ${(payload.words || []).join(", ")}\nFor each target word, return one short natural Korean meaning fitting its context in the passage. Return every target word exactly as given.`;
       schema = { type: "OBJECT", properties: { glosses: { type: "ARRAY", items: wordSchema } }, required: ["glosses"] };

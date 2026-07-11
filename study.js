@@ -468,11 +468,13 @@
         if (!glossMap.has(lower)) glossMap.set(lower, meaning);
       });
     }
-    return tokenize(stage.sentence).map((token) => {
+    const verbTargets = new Set(getVerbTargetIndices(stage));
+    return tokenize(stage.sentence).map((token, tokenIndex) => {
       if (!/[A-Za-z]/.test(token)) return `<span class="para-token is-punct">${escapeHtml(token)}</span>`;
+      const verbClass = isActive && verbTargets.has(tokenIndex) ? " is-verb" : "";
       if (!isActive) return `<span class="para-token">${escapeHtml(token)}</span>`;
       const gloss = glossMap.get(token.toLowerCase());
-      return `<button type="button" class="para-token is-word${gloss ? " has-gloss" : ""}" data-word="${escapeHtml(token)}" data-si="${stageIndex}">${escapeHtml(token)}${gloss ? `<small>${escapeHtml(gloss)}</small>` : ""}</button>`;
+      return `<button type="button" class="para-token is-word${verbClass}${gloss ? " has-gloss" : ""}" data-word="${escapeHtml(token)}" data-si="${stageIndex}">${escapeHtml(token)}${gloss ? `<small>${escapeHtml(gloss)}</small>` : ""}</button>`;
     }).join(" ");
   }
 

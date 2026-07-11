@@ -108,6 +108,7 @@
       showToast(state.sound ? "문장 읽기 소리를 켰어요." : "문장 읽기 소리를 껐어요.");
     });
     ui.pages.addEventListener("click", handleBoardClick);
+    initFontScale();
     ui.bigNext.addEventListener("click", () => {
       if (state.mode === "paragraph") {
         if (!state.paragraphs) return;
@@ -369,6 +370,25 @@
     initParagraphs();
     state.timer = setInterval(updateTimer, 1000);
     prefetchWordGlosses();
+  }
+
+  function initFontScale() {
+    // 글씨 크기 조절: 한 번 정하면 이 기기에 저장되어 계속 유지된다
+    const KEY = "readingLabFontScale";
+    let scale = 1;
+    try { scale = Math.min(1.8, Math.max(0.6, parseFloat(localStorage.getItem(KEY)) || 1)); } catch (_) { /* ignore */ }
+    const label = $("#font-scale-label");
+    const apply = () => {
+      document.documentElement.style.setProperty("--para-scale", String(scale));
+      if (label) label.textContent = `${Math.round(scale * 100)}%`;
+      try { localStorage.setItem(KEY, String(scale)); } catch (_) { /* ignore */ }
+    };
+    const step = (delta) => { scale = Math.min(1.8, Math.max(0.6, Math.round((scale + delta) * 10) / 10)); apply(); };
+    const smaller = $("#font-smaller");
+    const larger = $("#font-larger");
+    if (smaller) smaller.addEventListener("click", () => step(-0.1));
+    if (larger) larger.addEventListener("click", () => step(0.1));
+    apply();
   }
 
   function findCurrentBook() {

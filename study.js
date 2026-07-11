@@ -486,7 +486,7 @@
       const gloss = allowedGlosses ? allowedGlosses.get(lower) : null;
       if (gloss) allowedGlosses.delete(lower); // 같은 단어는 문단에서 처음 한 번만 표기
       return `<button type="button" class="para-token is-word${verbClass}${gloss ? " has-gloss" : ""}" data-word="${escapeHtml(token)}" data-si="${stageIndex}">${escapeHtml(token)}${gloss ? `<small>${escapeHtml(gloss)}</small>` : ""}</button>`;
-    }).join(" ");
+    }).join(" ").replace(/ (<span class="para-token is-punct">)/g, "$1"); // 구두점 앞 공백 제거(책 조판처럼)
   }
 
   function renderParagraphs() {

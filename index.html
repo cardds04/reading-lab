@@ -40,7 +40,7 @@
           </div>
 
           <section id="saved-books-panel" class="saved-books-panel saved-books-panel--library" hidden aria-label="저장한 책">
-            <div class="saved-books-heading"><div><span>MY BOOKS</span><strong>저장한 책을 골라 시작하세요</strong></div><small>사진으로 만든 책</small></div>
+            <div class="saved-books-heading"><div><span>MY BOOKS</span><strong>저장한 책을 골라 시작하세요</strong></div><small>마이온 · 리딩게이트 · 기타</small></div>
             <div id="saved-book-list" class="saved-book-list saved-book-list--library"></div>
           </section>
         </div>
@@ -62,6 +62,7 @@
               <div class="source-meta-grid">
                 <label class="gemini-key-field"><span>Gemini API 키</span><input id="gemini-api-key-input" type="password" placeholder="AIza…" autocomplete="new-password" spellcheck="false" /><small>현재 브라우저 탭에서만 유지되며 책 데이터에는 저장되지 않습니다.</small></label>
                 <label><span>책 제목</span><input id="book-title-input" type="text" placeholder="표지를 붙여넣으면 자동으로 입력됩니다" /></label>
+                <label><span>출처</span><select id="book-source-select"><option value="마이온">마이온</option><option value="리딩게이트">리딩게이트</option><option value="기타" selected>기타</option></select></label>
               </div>
               <button id="cover-paste-zone" class="cover-paste-zone" type="button" aria-pressed="true">
                 <span>①</span>

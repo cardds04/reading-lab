@@ -92,6 +92,11 @@ button, input, select { font: inherit; }
 .saved-books-heading strong { margin-top: 4px; font-family: "Noto Sans KR", sans-serif; font-size: 15px; }
 .saved-books-heading small { color: var(--study-muted); font-family: "Noto Sans KR", sans-serif; font-size: 11px; }
 .saved-book-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 9px; }
+.saved-book-list--grouped { display: block; }
+.saved-book-group + .saved-book-group { margin-top: 22px; }
+.saved-book-group__title { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid var(--study-line); font-family: "Noto Sans KR", sans-serif; }
+.saved-book-group__title strong { color: var(--study-green); font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+.saved-book-group__title small { color: var(--study-muted); font-size: 11px; }
 .saved-book-card { position: relative; width: 100%; min-height: 68px; display: flex; align-items: stretch; border: 1px solid #d8e2db; border-radius: 11px; color: var(--study-ink); background: rgba(255,255,255,.82); overflow: hidden; transition: transform .18s, border-color .18s, box-shadow .18s; }
 .saved-book-card:hover { border-color: var(--study-green); box-shadow: 0 8px 20px rgba(23,107,76,.12); transform: translateY(-2px); }
 .saved-book-card__start { min-width: 0; flex: 1; padding: 11px 45px 11px 13px; display: flex; align-items: center; justify-content: space-between; gap: 14px; border: 0; color: inherit; background: transparent; text-align: left; cursor: pointer; }
@@ -121,6 +126,9 @@ button, input, select { font: inherit; }
 .source-meta-grid label span { color: rgba(255,255,255,.58); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
 .source-meta-grid input { width: 100%; height: 48px; padding: 0 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 7px; outline: none; color: white; background: rgba(255,255,255,.07); }
 .source-meta-grid input:focus { border-color: #75e6d0; box-shadow: 0 0 0 3px rgba(117,230,208,.12); }
+.source-meta-grid select { width: 100%; height: 48px; padding: 0 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 7px; outline: none; color: white; background: rgba(255,255,255,.07); font-family: "Noto Sans KR", sans-serif; }
+.source-meta-grid select:focus { border-color: #75e6d0; box-shadow: 0 0 0 3px rgba(117,230,208,.12); }
+.source-meta-grid select option { color: #17261f; }
 .source-meta-grid label small { color: rgba(255,255,255,.42); font-family: "Noto Sans KR", sans-serif; font-size: 10px; line-height: 1.5; }
 .gemini-key-field { padding: 14px; border: 1px solid rgba(117,230,208,.22); border-radius: 9px; background: rgba(117,230,208,.055); }
 .gemini-key-field > span::before { content: "✦"; margin-right: 7px; color: #75e6d0; }

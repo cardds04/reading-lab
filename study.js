@@ -278,9 +278,19 @@
   function renderSavedBooks() {
     const books = getStoredBooks();
     ui.savedBooksPanel.hidden = books.length === 0;
-    ui.savedBookList.innerHTML = books.map((book, index) => `<div class="saved-book-card">
-      <button class="saved-book-card__start" type="button" data-saved-book-index="${index}"><span class="saved-book-card__art" aria-hidden="true">📖</span><span class="saved-book-card__copy"><strong>${escapeHtml(book.title || "이름 없는 책")}</strong><small>${book.sentences.length}문장 · 저장한 책</small></span><b class="saved-book-card__arrow">→</b></button>
+    ui.savedBookList.classList.add("saved-book-list--grouped");
+    const bookSource = (book) => (book.source === "마이온" || book.source === "리딩게이트" ? book.source : "기타");
+    const bookCard = (book, index) => `<div class="saved-book-card">
+      <button class="saved-book-card__start" type="button" data-saved-book-index="${index}"><span class="saved-book-card__art" aria-hidden="true">📖</span><span class="saved-book-card__copy"><strong>${escapeHtml(book.title || "이름 없는 책")}</strong><small>${book.sentences.length}문장 · ${bookSource(book)}</small></span><b class="saved-book-card__arrow">→</b></button>
       <button class="saved-book-card__delete" type="button" data-delete-book-index="${index}" aria-label="${escapeHtml(book.title || "이름 없는 책")} 삭제">×</button>
+    </div>`;
+    const groups = [["마이온", []], ["리딩게이트", []], ["기타", []]];
+    books.forEach((book, index) => {
+      groups.find((group) => group[0] === bookSource(book))[1].push(bookCard(book, index));
+    });
+    ui.savedBookList.innerHTML = groups.filter((group) => group[1].length).map(([name, cards]) => `<div class="saved-book-group">
+      <div class="saved-book-group__title"><strong>${name}</strong><small>${cards.length}권</small></div>
+      <div class="saved-book-list saved-book-list--library saved-book-group__grid">${cards.join("")}</div>
     </div>`).join("");
   }
 

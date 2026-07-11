@@ -131,7 +131,7 @@
     if (state.bound) return;
     ui = {
       title: $("#title-screen"), screen: $("#homework-screen"), back: $("#homework-back"), open: $("#homework-button"),
-      geminiKey: $("#gemini-api-key-input"), bookTitle: $("#book-title-input"), bookSr: $("#book-sr-input"),
+      geminiKey: $("#gemini-api-key-input"), bookTitle: $("#book-title-input"), bookSr: $("#book-sr-input"), bookSource: $("#book-source-select"),
       coverZone: $("#cover-paste-zone"), coverStatus: $("#cover-status"), bodyZone: $("#body-paste-zone"),
       step: $("#homework-step-label"), uploadView: $("#homework-upload-view"), reviewView: $("#homework-review-view"),
       previews: $("#photo-preview-list"), recognize: $("#recognize-button"), manual: $("#manual-entry-button"),
@@ -697,6 +697,7 @@
     const book = {
       title: state.sourceMeta.sourceTitle,
       srLevel: state.sourceMeta.srLevel,
+      source: (ui.bookSource && ui.bookSource.value) || "기타",
       savedAt: new Date().toISOString(),
       sentences: state.sentences
     };

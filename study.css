@@ -478,3 +478,6 @@ button, input, select { font: inherit; }
 .sentence-card.is-expanded-complete .word-token,
 .sentence-card.is-expanded-complete .word-token.is-verb,
 .sentence-card.is-expanded-complete .word-token.is-idiom { color: #111 !important; opacity: .32; font-weight: 900; }
+
+.result-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.result-card .result-actions .study-primary { margin: 0; }

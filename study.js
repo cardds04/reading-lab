@@ -97,6 +97,7 @@
       srLevel: state.srLevel
     }));
     $("#exit-study").addEventListener("click", showLanding);
+    $("#home-button").addEventListener("click", showLanding);
     ui.savedBookList.addEventListener("click", handleSavedBookClick);
     ui.sound.addEventListener("click", () => {
       state.sound = !state.sound;

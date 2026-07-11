@@ -706,7 +706,7 @@
       const match = books.findIndex((item) => item.title === book.title);
       if (match >= 0) books.splice(match, 1);
       books.unshift(book);
-      localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books.slice(0, 20)));
+      localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books.slice(0, 40)));
       localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(book));
     } catch (_) { /* local storage may be unavailable */ }
     try { window.dispatchEvent(new Event("readinglab:books-changed")); } catch (_) { /* older browsers */ }

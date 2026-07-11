@@ -245,7 +245,7 @@
       }
       merged.delete(key);
     });
-    const books = [...merged.values()].sort((a, b) => bookTime(b) - bookTime(a)).slice(0, 20);
+    const books = [...merged.values()].sort((a, b) => bookTime(b) - bookTime(a)).slice(0, 40);
     try {
       localStorage.setItem("lostSignalHomeworkBooks", JSON.stringify(books));
       if (books.length) localStorage.setItem("lostSignalHomeworkBook", JSON.stringify(books[0]));

@@ -458,22 +458,33 @@
       .map((stage) => String(stage.translation || "").trim()).filter(Boolean).join(" ");
   }
 
-  function renderParagraphSentence(stage, stageIndex, isActive) {
-    const glossMap = new Map();
-    if (isActive) {
+  function hardestParagraphWords(para, limit) {
+    // 문단에서 가장 어려운 단어만 고른다: 흔한 단어 사전에 없는 것 우선, 그다음 긴 단어
+    const candidates = new Map();
+    state.stages.slice(para.start, para.end + 1).forEach((stage) => {
       (Array.isArray(stage.wordGlosses) ? stage.wordGlosses : []).forEach((item) => {
         const lower = String(item.word || "").toLowerCase();
         const meaning = String(item.meaning || "").trim();
-        if (!lower || !meaning || EASY_WORDS.has(lower) || lower.length <= 2) return;
-        if (!glossMap.has(lower)) glossMap.set(lower, meaning);
+        if (!lower || !meaning || EASY_WORDS.has(lower) || lower.length <= 3) return;
+        if (!candidates.has(lower)) candidates.set(lower, meaning);
       });
-    }
+    });
+    const known = window.HomeworkBuilder && typeof window.HomeworkBuilder.vocabularyMeaning === "function"
+      ? window.HomeworkBuilder.vocabularyMeaning : () => "";
+    return new Map([...candidates.entries()]
+      .sort((a, b) => ((known(a[0]) ? 0 : 100) + a[0].length) < ((known(b[0]) ? 0 : 100) + b[0].length) ? 1 : -1)
+      .slice(0, limit));
+  }
+
+  function renderParagraphSentence(stage, stageIndex, isActive, allowedGlosses) {
     const verbTargets = new Set(getVerbTargetIndices(stage));
     return tokenize(stage.sentence).map((token, tokenIndex) => {
       if (!/[A-Za-z]/.test(token)) return `<span class="para-token is-punct">${escapeHtml(token)}</span>`;
       const verbClass = isActive && verbTargets.has(tokenIndex) ? " is-verb" : "";
       if (!isActive) return `<span class="para-token">${escapeHtml(token)}</span>`;
-      const gloss = glossMap.get(token.toLowerCase());
+      const lower = token.toLowerCase();
+      const gloss = allowedGlosses ? allowedGlosses.get(lower) : null;
+      if (gloss) allowedGlosses.delete(lower); // 같은 단어는 문단에서 처음 한 번만 표기
       return `<button type="button" class="para-token is-word${verbClass}${gloss ? " has-gloss" : ""}" data-word="${escapeHtml(token)}" data-si="${stageIndex}">${escapeHtml(token)}${gloss ? `<small>${escapeHtml(gloss)}</small>` : ""}</button>`;
     }).join(" ");
   }
@@ -484,8 +495,9 @@
     const cards = state.paragraphs.map((para, pIndex) => {
       const isActive = pIndex === state.paraIndex;
       const cls = isActive ? "is-active" : pIndex < state.paraIndex ? "is-done" : "is-queued";
+      const allowedGlosses = isActive ? hardestParagraphWords(para, 3) : null;
       const text = state.stages.slice(para.start, para.end + 1)
-        .map((stage, offset) => renderParagraphSentence(stage, para.start + offset, isActive)).join(" ");
+        .map((stage, offset) => renderParagraphSentence(stage, para.start + offset, isActive, allowedGlosses)).join(" ");
       const showSummary = pIndex < state.paraIndex || (isActive && state.paraPhase === "summary");
       const summary = showSummary ? paragraphSummaryText(para) : "";
       return `<article class="para-card ${cls}" data-para-index="${pIndex}">
